@@ -16,7 +16,7 @@ export default function Layout(props: { children: JSX.Element }) {
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;900&display=swap" rel="stylesheet" />
       </Head>
       <header className={styles.header}>
-        <div>二畳ラボ</div>
+        <Link href="/"><div>二畳ラボ</div></Link>
       </header>
       {children}
     </div>
