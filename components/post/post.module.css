@@ -1,0 +1,33 @@
+.card {
+  cursor: pointer;
+}
+
+.readMoreButtonWrapper {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: end;
+}
+
+.thumbnailWrapper {
+  background-color: rgb(50, 50, 50);
+  margin: 2rem 0 1rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.thumbnailWrapper img {
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+  object-fit: cover;
+}
+
+.title {
+  margin: 0.5rem 0;
+}
+
+@media screen and (max-width: 600px) {
+  .thumbnailWrapper img {
+    height: 200px;
+  }
+}
