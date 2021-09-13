@@ -6,6 +6,8 @@ import Link from 'next/link';
 import Layout from '../../components/layout/layout';
 import { FrontMatterType } from '../../models';
 import { useRouter } from 'next/dist/client/router';
+import Button from '../../components/button/button';
+import styles from './post-page.module.css';
 
 type PostPageProps = {
   frontmatter: FrontMatterType,
@@ -19,15 +21,18 @@ export default function PostPage(props: PostPageProps) {
   return (
     <Layout>
       <>
-        <button type="button" onClick={() => { router.push('/') }}>go back</button>
-        <div className="card-page">
-          <h1>{ frontmatter.title }</h1>
-          <div className="post-date">{ frontmatter.date }</div>
-          <img src={frontmatter.cover_image} alt="" width="100%"/>
-          <div>
+        <Button label="< back" onClick={() => { router.push('/') }} />
+        <div className={styles.post}>
+          <h1 className={styles.title}>{ frontmatter.title }</h1>
+          <p className="post-date">{ frontmatter.date }</p>
+          <div className={styles.thumbnailWrapper}>
+            <img src={frontmatter.cover_image} alt="" />
+          </div>
+          <div className={styles.content}>
             <div dangerouslySetInnerHTML={{ __html: markd(content) }} />
           </div>
         </div>
+        <Button label="< back" onClick={() => { router.push('/') }} />
       </>
     </Layout>
   );

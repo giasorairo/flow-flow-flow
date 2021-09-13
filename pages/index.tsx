@@ -8,6 +8,7 @@ import path from 'path';
 import matter from 'gray-matter';
 import Post from '../components/post/post';
 import { sortByDate } from '../utils';
+import styles from './root.module.css';
 
 type HomeProps = {
   posts: PostType[],
@@ -19,9 +20,9 @@ export default function Home(props: HomeProps) {
     <Layout>
       <div>
         <main>
-          <div className="post">
+          <div>
             {posts.map((post, index) => (
-              <div key={index}><Post post={ post } /></div>
+              <div className={styles.post} key={index}><Post post={ post } /></div>
             ))}
           </div>
         </main>
