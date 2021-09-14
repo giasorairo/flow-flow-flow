@@ -2,11 +2,11 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import markd from 'marked';
-import Link from 'next/link';
-import Layout from '../../components/layout/layout';
-import { FrontMatterType } from '../../models';
+import Head from 'next/head';
+import Layout from '../../../components/layout/layout';
+import { FrontMatterType } from '../../../models';
 import { useRouter } from 'next/dist/client/router';
-import Button from '../../components/button/button';
+import Button from '../../../components/button/button';
 import styles from './post-page.module.css';
 import Prism from 'prismjs';
 import { useEffect } from 'react';
@@ -26,6 +26,25 @@ export default function PostPage(props: PostPageProps) {
   return (
     <Layout>
       <>
+        {/* headタグの中の上書き */}
+        <Head>
+          {/* OGPの設定 */}
+        <meta name="description" key="description" content={frontmatter.excerpt} />
+        <meta property="og:site_name" key="ogSiteName" content="二畳ラボ" />
+        <meta property="og:title" key="ogTItle" content={frontmatter.title} />
+        <meta property="og:url" content={`https://nijyo-lag.web.app/${slug}`} />
+        <meta
+          property="og:description"
+          key="ogDescription"
+          content={frontmatter.excerpt}
+        />
+        <meta property="og:type" content="article" />
+        <meta property="og:image" key="ogImage" content={`https://nijyo-lag.web.app/${frontmatter.cover_image}`} />
+        {/* twitterOGP */}
+        <meta name="twitter:card" key="twitterCard" content="summary_large_image" />
+        <meta name="twitter:image" key="twitterImage" content={`https://nijyo-lag.web.app/${frontmatter.cover_image}`} />
+        </Head>
+        {/* ページの内容 */}
         <Button label="< back" onClick={() => { router.push('/') }} />
         <div className={styles.post}>
           <h1 className={styles.title}>{ frontmatter.title }</h1>
