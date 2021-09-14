@@ -31,7 +31,15 @@ h3 {
 
 p {
   font-size: 1rem;
-  padding: 0.5rem 0;
+  /* padding: 0.5rem 0; */
   line-height: 1.5rem;
   color: rgb(200, 200, 200)
+}
+
+a {
+  color: rgb(247, 150, 121);
+}
+
+a:hover {
+  color: rgb(247, 189, 172);;
 }

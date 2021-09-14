@@ -34,3 +34,10 @@
   border-left: solid rgb(220, 220, 220) 3px;
   padding-left: 10px;
 }
+
+.content code {
+  background-color: #636363;
+  margin: 0 0.1rem;
+  padding: 0.1rem 0.2rem;
+  border-radius: 5px;
+}
