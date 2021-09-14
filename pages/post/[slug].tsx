@@ -8,6 +8,8 @@ import { FrontMatterType } from '../../models';
 import { useRouter } from 'next/dist/client/router';
 import Button from '../../components/button/button';
 import styles from './post-page.module.css';
+import Prism from 'prismjs';
+import { useEffect } from 'react';
 
 type PostPageProps = {
   frontmatter: FrontMatterType,
@@ -18,6 +20,9 @@ type PostPageProps = {
 export default function PostPage(props: PostPageProps) {
   const { frontmatter, slug, content } = props;
   const router = useRouter();
+  useEffect(() => {
+    Prism.highlightAll();
+  }, []);
   return (
     <Layout>
       <>
@@ -28,7 +33,7 @@ export default function PostPage(props: PostPageProps) {
           <div className={styles.thumbnailWrapper}>
             <img src={frontmatter.cover_image} alt="" />
           </div>
-          <div className={styles.content}>
+          <div className={`${styles.content} prose`}>
             <div dangerouslySetInnerHTML={{ __html: markd(content) }} />
           </div>
         </div>
