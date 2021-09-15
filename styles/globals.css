@@ -6,6 +6,9 @@ body {
   font-family: "Source Sans Pro",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   letter-spacing: 0.05rem;
   font-size: 0.95rem;
+  /* 英文の折返し */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 h1 {
