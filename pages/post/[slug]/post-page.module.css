@@ -41,3 +41,14 @@
   padding: 0.1rem 0.2rem;
   border-radius: 5px;
 }
+
+.content ul {
+  list-style: inside;
+  margin-left: 1rem;
+  padding: 0.3rem 0;
+  line-height: 1.5rem;
+}
+
+.content li {
+  /* padding: 0.2rem 0; */
+}
