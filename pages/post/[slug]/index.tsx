@@ -33,17 +33,17 @@ export default function PostPage(props: PostPageProps) {
         <meta name="description" key="description" content={frontmatter.excerpt} />
         <meta property="og:site_name" key="ogSiteName" content="二畳ラボ" />
         <meta property="og:title" key="ogTItle" content={frontmatter.title} />
-        <meta property="og:url" content={`https://nijyo-lag.web.app/${slug}`} />
+        <meta property="og:url" content={`${process.env.NEXT_PUBLIC_URL}/${slug}`} />
         <meta
           property="og:description"
           key="ogDescription"
           content={frontmatter.excerpt}
         />
         <meta property="og:type" content="article" />
-        <meta property="og:image" key="ogImage" content={`https://nijyo-lag.web.app/${frontmatter.cover_image}`} />
+        <meta property="og:image" key="ogImage" content={`${process.env.NEXT_PUBLIC_URL}/${frontmatter.cover_image}`} />
         {/* twitterOGP */}
         <meta name="twitter:card" key="twitterCard" content="summary_large_image" />
-        <meta name="twitter:image" key="twitterImage" content={`https://nijyo-lag.web.app/${frontmatter.cover_image}`} />
+        <meta name="twitter:image" key="twitterImage" content={`${process.env.NEXT_PUBLIC_URL}/${frontmatter.cover_image}`} />
         </Head>
         {/* ページの内容 */}
         <Button label="< back" onClick={() => { router.push('/') }} />

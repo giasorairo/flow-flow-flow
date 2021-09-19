@@ -1,3 +1,18 @@
 .post {
   margin-bottom: 5rem;
 }
+
+.pageNationWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.pageNationWrapper > span {
+  padding: 0 5px;
+  cursor: pointer;
+  color: rgb(247, 150, 121);
+}
+
+.pageNationWrapper > span:hover {
+  color: rgb(247, 189, 172);
+}

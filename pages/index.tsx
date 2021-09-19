@@ -12,10 +12,11 @@ import styles from './root.module.css';
 
 type HomeProps = {
   posts: PostType[],
+  pages: number[],
 };
 
 export default function Home(props: HomeProps) {
-  const { posts } = props;
+  const { posts, pages } = props;
   return (
     <Layout>
       <div>
@@ -26,6 +27,9 @@ export default function Home(props: HomeProps) {
             ))}
           </div>
         </main>
+        <div className={styles.pageNationWrapper}>
+          {pages.map((v, i) => <Link key={i} href={`/page/${v}`}><span>{v}</span></Link>)}
+        </div>
       </div>
     </Layout>
   )
@@ -50,7 +54,9 @@ export async function getStaticProps() {
       frontmatter: frontmatter as FrontMatterType,
     }
   });
+  // ページURL生成
+  const pages = new Array(Math.ceil(files.length / Number(process.env.DISPLAY_POST_NUM_PER_PAGE))).fill(null).map((_, i) => i + 1);
   return {
-    props: { posts: posts.sort(sortByDate) }
+    props: { posts: posts.sort(sortByDate).splice(0, Number(process.env.DISPLAY_POST_NUM_PER_PAGE)), pages },
   };
 }
