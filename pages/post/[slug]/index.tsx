@@ -10,6 +10,7 @@ import Button from '../../../components/button/button';
 import styles from './post-page.module.css';
 import Prism from 'prismjs';
 import { useEffect } from 'react';
+import { ShareButtons } from '../../../components/share-buttons';
 
 type PostPageProps = {
   frontmatter: FrontMatterType,
@@ -55,6 +56,10 @@ export default function PostPage(props: PostPageProps) {
           <div className={`${styles.content} prose`}>
             <div dangerouslySetInnerHTML={{ __html: markd(content) }} />
           </div>
+        </div>
+        {/* シェアボタン */}
+        <div className={styles.shareButtonsWrapper}>
+          <ShareButtons slug={slug} frontmatter={frontmatter} />
         </div>
         <Button label="< back" onClick={() => { router.push('/') }} />
       </>
