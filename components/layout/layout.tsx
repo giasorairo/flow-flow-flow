@@ -10,7 +10,10 @@ export default function Layout(props: { children: JSX.Element }) {
     <div>
       <Head>
         <title>二畳Lab</title>
-        <link rel="icon" href="/favicon.ico" />
+        {/* タブ部分のファビコン設定 */}
+        <link rel="icon" href="/images/icon/icon.png" />
+        {/* スマホのホーム画面に表示されるショートカットアイコン設定 */}
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/icon/icon.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;900&display=swap" rel="stylesheet" />
