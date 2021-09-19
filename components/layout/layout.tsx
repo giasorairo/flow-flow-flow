@@ -19,7 +19,7 @@ export default function Layout(props: { children: JSX.Element }) {
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;900&display=swap" rel="stylesheet" />
         {/* OGPの設定 */}
         <meta name="description" key="description" content="てきとうなことばっかり書いているブログ" />
-        <meta property="og:url" content="https://nijyo-lag.web.app/" />
+        <meta property="og:url" content={process.env.NEXT_PUBLIC_URL} />
         <meta property="og:title" key="ogTItle" content="二畳Lab" />
         <meta property="og:site_name" key="ogSiteName" content="二畳ラボ" />
         <meta
@@ -28,10 +28,10 @@ export default function Layout(props: { children: JSX.Element }) {
           content="てきとうなことばっかり書いているブログ"
         />
         <meta property="og:type" content="website" />
-        <meta property="og:image" key="ogImage" content="https://nijyo-lag.web.app/images/posts/img1.jpg" />
+        <meta property="og:image" key="ogImage" content={`${process.env.NEXT_PUBLIC_URL}/images/icon/icon.png`} />
         {/* twitterOGP */}
         <meta name="twitter:card" key="twitterCard" content="summary_large_image" />
-        <meta name="twitter:image" key="twitterImage" content="https://nijyo-lag.web.app/images/posts/img1.jpg" />
+        <meta name="twitter:image" key="twitterImage" content={`${process.env.NEXT_PUBLIC_URL}/images/icon/icon.png`} />
       </Head>
       <header className={styles.header}>
         <Link href="/"><div>二畳Lab</div></Link>
