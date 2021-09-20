@@ -6,21 +6,21 @@ import matter from 'gray-matter';
 import { sortByDate } from '../../../utils';
 import Post from '../../../components/post/post';
 import styles from '../../root.module.css';
+import categoryStyles from './category-page.module.css'
 import Link from 'next/link';
-import pageStyles from './page-page.module.css';
 
-type PagePropsType = {
-  slug: string,
+type CategoryPagePropsType = {
   posts: PostType[],
-  pages: number[],
+  category: string,
 };
 
-export default function Page(props: PagePropsType) {
-  const { slug, posts, pages } = props;
+export default function CategoryPage(props: CategoryPagePropsType) {
+  const { posts, category } = props;
   return (
     <>
       <Layout>
         <div>
+          <p className={categoryStyles.category}>{`category: ${category}`}</p>
           <main>
             <div>
               {posts.map((post, index) => (
@@ -28,26 +28,29 @@ export default function Page(props: PagePropsType) {
               ))}
             </div>
           </main>
-          <div className={styles.pageNationWrapper}>
-            {pages.map((v, i) => v.toString() === slug
-              ? <span className={pageStyles.disabledPageNation}>{v}</span>
-              : <Link key={i} href={`/page/${v}`}><span>{v}</span></Link>)}
-         </div>
         </div>
       </Layout>
     </>
   ); 
 };
 
+
 export async function getStaticPaths() {
+  // postsディレクトリ内のファイル名の配列を取得
   const files = fs.readdirSync(path.join('posts'));
-  // 1ページに表示する記事の数
-  const displayPostNumPerPage = 2;
-  // ページURL生成
-  const pages = new Array(Math.ceil(files.length / displayPostNumPerPage)).fill(null).map((_, i) => i + 1);
-  const paths = pages.map((v) => ({
+  // カテゴリの配列を取得
+  const categories = files.reduce((a, fileName) => {
+    const markdownWithMeta = fs.readFileSync(path.join('posts', fileName), 'utf-8');
+    const { data: frontmatter } = matter(markdownWithMeta);
+    const { category } = frontmatter;
+    if (category && !a.includes(category)) {
+      a.push(category);
+    }
+    return a;
+  }, []);
+  const paths = categories.map((category) => ({
     params: {
-      slug: v.toString(),
+      slug: category,
     },
   }));
   return {
@@ -69,16 +72,15 @@ export async function getStaticProps({ params: { slug } }) {
     const { data: frontmatter } = matter(markdownWithMeta);
     // return
     return {
-      slug,
+      slug: fileName.replace('.md', ''),
       frontmatter: frontmatter as FrontMatterType,
     }
   });
-  // ページ数の配列
-  const pages = new Array(Math.ceil(files.length / Number(process.env.DISPLAY_POST_NUM_PER_PAGE))).fill(null).map((_, i) => i + 1);
-  const postSortedByDate = posts.sort(sortByDate);
-  // (displayPostNumPerPage * (page - 1)) から、displayPostNumPerPage個のpostを取り出す
-  const displayPost = postSortedByDate.splice(Number(process.env.DISPLAY_POST_NUM_PER_PAGE) * (Number(slug) - 1), Number(process.env.DISPLAY_POST_NUM_PER_PAGE));
+  // カテゴリで記事を絞り込みして、日付でソート
+  const displayPost = posts
+    .filter((post) => post.frontmatter.category === slug)
+    .sort(sortByDate);
   return {
-    props: { posts: displayPost, pages, slug }
+    props: { posts: displayPost, category: slug }
   };
 }

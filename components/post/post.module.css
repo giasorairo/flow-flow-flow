@@ -26,6 +26,15 @@
   margin: 0.5rem 0;
 }
 
+.categoryTag {
+  margin-left: 1rem;
+  color: rgb(247, 150, 121);
+}
+
+.categoryTag:hover {
+  color: rgb(247, 189, 172);;
+}
+
 @media screen and (max-width: 600px) {
   .thumbnailWrapper img {
     height: 200px;
