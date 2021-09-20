@@ -32,7 +32,7 @@ export default function PostPage(props: PostPageProps) {
           {/* OGPの設定 */}
         <meta name="description" key="description" content={frontmatter.excerpt} />
         <meta property="og:site_name" key="ogSiteName" content="二畳ラボ" />
-        <meta property="og:title" key="ogTItle" content={frontmatter.title} />
+        <meta property="og:title" key="ogTItle" content={`[${frontmatter.category}] ${frontmatter.title}`} />
         <meta property="og:url" content={`${process.env.NEXT_PUBLIC_URL}/${slug}`} />
         <meta
           property="og:description"
