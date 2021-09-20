@@ -8,4 +8,5 @@ export type FrontMatterType = {
   date: string,
   excerpt: string,
   cover_image: string,
+  category: string,
 };
