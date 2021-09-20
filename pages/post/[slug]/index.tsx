@@ -48,8 +48,8 @@ export default function PostPage(props: PostPageProps) {
         {/* ページの内容 */}
         <Button label="< back" onClick={() => { router.push('/') }} />
         <div className={styles.post}>
-          <h1 className={styles.title}>{ frontmatter.title }</h1>
-          <p className="post-date">{ frontmatter.date }</p>
+          <h1 className={styles.title}>{`[${frontmatter.category}] ${frontmatter.title}`}</h1>
+          <p className="post-date">{frontmatter.date}</p>
           <div className={styles.thumbnailWrapper}>
             <img src={frontmatter.cover_image} alt="" />
           </div>
