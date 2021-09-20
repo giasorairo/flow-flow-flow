@@ -46,3 +46,15 @@ a {
 a:hover {
   color: rgb(247, 189, 172);;
 }
+
+/* 記事内の画像の中央寄せ */
+.postImgWrapper {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.postImgWrapper img {
+  max-width: 100%;
+  height: auto;
+}
