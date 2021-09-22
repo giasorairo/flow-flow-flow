@@ -43,7 +43,7 @@ export default function PostPage(props: PostPageProps) {
           {/* OGPの設定 */}
         <meta name="description" key="description" content={frontmatter.excerpt} />
         <meta property="og:site_name" key="ogSiteName" content="二畳ラボ" />
-        <meta property="og:title" key="ogTItle" content={`[${frontmatter.category}] ${frontmatter.title}`} />
+        <meta property="og:title" key="ogTItle" content={frontmatter.title} />
         <meta property="og:url" content={`${process.env.NEXT_PUBLIC_URL}/${slug}`} />
         <meta
           property="og:description"
@@ -60,16 +60,18 @@ export default function PostPage(props: PostPageProps) {
         {/* ページの内容 */}
         <div className={styles.post}>
           <h1 className={styles.title}>{frontmatter.title}</h1>
+          <p>{frontmatter.date}</p>
           <p>
-            <span className="post-date">{frontmatter.date}</span>
-            {frontmatter.category.split(',').map((v) => (
-            <CategoryTag
-              category={v}
-              onClick={() => {
-                handlerClickCategory(v);
-              }}
-            />
-          ))}
+            {frontmatter.category.split(',').map((v, i) => (
+              <React.Fragment key={i}>
+                <CategoryTag
+                  category={v}
+                  onClick={() => {
+                    handlerClickCategory(v);
+                  }}
+                />
+              </React.Fragment>
+            ))}
           </p>
           <div className={styles.thumbnailWrapper}>
             <img src={frontmatter.cover_image} alt="" />

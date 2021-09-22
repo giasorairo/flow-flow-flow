@@ -1,6 +1,6 @@
 import { useRouter } from 'next/dist/client/router';
 import Link from 'next/link';
-import { useCallback } from 'react';
+import React, { useCallback } from 'react';
 import { PostType } from '../../models';
 import Button from '../button/button';
 import styles from './post.module.css';
@@ -27,17 +27,19 @@ export default function Post (props: PostProps) {
         <div className={styles.thumbnailWrapper}>
           <img src={post.frontmatter.cover_image} alt="" />
         </div>
+        <p>{post.frontmatter.date}</p>
         <p>
-          {post.frontmatter.date}
-          {post.frontmatter.category.split(',').map((v) => (
-            <CategoryTag
-              category={v}
-              onClick={(e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                handlerClickCategory(v);
-              }}
-            />
+          {post.frontmatter.category.split(',').map((v, i) => (
+            <React.Fragment key={i}>
+              <CategoryTag
+                category={v}
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  handlerClickCategory(v);
+                }}
+              />
+            </React.Fragment>
           ))}
         </p>
         <h2 className={styles.title}>{post.frontmatter.title}</h2>
