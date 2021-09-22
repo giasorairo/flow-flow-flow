@@ -28,11 +28,11 @@
 
 .categoryTag {
   margin-left: 1rem;
-  color: rgb(247, 150, 121);
+  color: rgb(79, 126, 255);
 }
 
 .categoryTag:hover {
-  color: rgb(247, 189, 172);;
+  color: rgb(255, 78, 196);;
 }
 
 @media screen and (max-width: 600px) {

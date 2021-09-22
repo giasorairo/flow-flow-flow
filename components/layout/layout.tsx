@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import React, { useCallback, useState } from 'react';
 import styles from './layout.module.css';
 
 export default function Layout(props: { children: JSX.Element }) {
@@ -9,7 +8,7 @@ export default function Layout(props: { children: JSX.Element }) {
   return (
     <div>
       <Head>
-        <title>二畳Lab</title>
+        <title>flow-flow-flow</title>
         {/* タブ部分のファビコン設定 */}
         <link rel="icon" href="/images/icon/icon.png" />
         {/* スマホのホーム画面に表示されるショートカットアイコン設定 */}
@@ -18,14 +17,14 @@ export default function Layout(props: { children: JSX.Element }) {
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;900&display=swap" rel="stylesheet" />
         {/* OGPの設定 */}
-        <meta name="description" key="description" content="てきとうなことばっかり書いているブログ" />
+        <meta name="description" key="description" content="すこしずつつよくなる開発ブログ" />
         <meta property="og:url" content={process.env.NEXT_PUBLIC_URL} />
-        <meta property="og:title" key="ogTItle" content="二畳Lab" />
-        <meta property="og:site_name" key="ogSiteName" content="二畳ラボ" />
+        <meta property="og:title" key="ogTItle" content="flow-flow-flow" />
+        <meta property="og:site_name" key="ogSiteName" content="flow-flow-flow" />
         <meta
           property="og:description"
           key="ogDescription"
-          content="てきとうなことばっかり書いているブログ"
+          content="すこしずつつよくなる開発ブログ"
         />
         <meta property="og:type" content="website" />
         <meta property="og:image" key="ogImage" content={`${process.env.NEXT_PUBLIC_URL}/images/icon/icon.png`} />
@@ -34,7 +33,7 @@ export default function Layout(props: { children: JSX.Element }) {
         <meta name="twitter:image" key="twitterImage" content={`${process.env.NEXT_PUBLIC_URL}/images/icon/icon.png`} />
       </Head>
       <header className={styles.header}>
-        <Link href="/"><div>二畳Lab</div></Link>
+        <Link href="/"><div>flow-flow-flow</div></Link>
       </header>
       {children}
       <footer className={styles.footer}>ふったー</footer>

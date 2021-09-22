@@ -1,8 +1,9 @@
 body {
   width: min(92%, 600px);
   margin: 0 auto;
-  background-color: #1d1d1d;
-  color: rgb(220, 220, 220);
+  /* background: linear-gradient(rgb(79, 126, 255), rgb(255, 78, 196)); */
+  background: rgb(250, 250, 250);
+  color: rgb(70, 70, 70);
   font-family: "Source Sans Pro",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   letter-spacing: 0.05rem;
   font-size: 0.95rem;
@@ -12,21 +13,21 @@ body {
 }
 
 h1 {
-  color: rgb(240, 240, 240);
+  color: rgb(70, 70, 70);
   font-size: 1.5rem;
   font-weight: bold;
   padding: 0.5rem 0;
 }
 
 h2 {
-  color: rgb(240, 240, 240);
+  color: rgb(70, 70, 70);
   font-size: 1.3rem;
   font-weight: bold;
   padding: 0.5rem 0;
 }
 
 h3 {
-  color: rgb(240, 240, 240);
+  color: rgb(70, 70, 70);
   font-size: 1.2rem;
   font-weight: bold;
   padding: 0.5rem 0;
@@ -36,15 +37,15 @@ p {
   font-size: 1rem;
   /* padding: 0.5rem 0; */
   line-height: 1.5rem;
-  color: rgb(200, 200, 200)
+  color: rgb(70, 70, 70);
 }
 
 a {
-  color: rgb(247, 150, 121);
+  color: rgb(79, 126, 255);
 }
 
 a:hover {
-  color: rgb(247, 189, 172);;
+  color: rgb(255, 78, 196);
 }
 
 /* 記事内の画像の中央寄せ */
@@ -57,4 +58,20 @@ a:hover {
 .postImgWrapper img {
   max-width: 100%;
   height: auto;
+}
+
+/* youtubeの埋め込み動画のレスポンシブ対応 */
+.movie-wrap {
+  position: relative;
+  padding-bottom: 56.25%; /*アスペクト比 16:9の場合の縦幅*/
+  height: 0;
+  overflow: hidden;
+}
+
+.movie-wrap iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
