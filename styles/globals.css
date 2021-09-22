@@ -1,8 +1,8 @@
 body {
   width: min(92%, 600px);
   margin: 0 auto;
-  /* background: linear-gradient(rgb(79, 126, 255), rgb(255, 78, 196)); */
-  background: rgb(250, 250, 250);
+  /* background: linear-gradient(rgb(79, 126, 255, 0.3), rgb(255, 78, 196, 0.3)); */
+  background: rgb(79, 126, 255, 0.3);
   color: rgb(70, 70, 70);
   font-family: "Source Sans Pro",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   letter-spacing: 0.05rem;
@@ -10,6 +10,10 @@ body {
   /* 英文の折返し */
   word-wrap: break-word;
   overflow-wrap: break-word;
+}
+
+title {
+  font-size: 1.7rem;
 }
 
 h1 {

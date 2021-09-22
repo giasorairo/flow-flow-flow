@@ -33,7 +33,7 @@ export default function Layout(props: { children: JSX.Element }) {
         <meta name="twitter:image" key="twitterImage" content={`${process.env.NEXT_PUBLIC_URL}/images/icon/icon.png`} />
       </Head>
       <header className={styles.header}>
-        <Link href="/"><div>flow-flow-flow</div></Link>
+        <Link href="/"><div className={styles.headerTitle}>flow-flow-flow</div></Link>
       </header>
       {children}
       <footer className={styles.footer}>ふったー</footer>
