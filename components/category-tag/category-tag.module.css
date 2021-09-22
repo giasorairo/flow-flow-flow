@@ -4,6 +4,10 @@
   cursor: pointer;
 }
 
+.categoryTag:first-child {
+  margin-left: 0;
+}
+
 .categoryTag:hover {
   color: rgb(255, 78, 196);;
 }

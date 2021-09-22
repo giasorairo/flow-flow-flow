@@ -62,10 +62,14 @@
 }
 
 .content ul {
-  list-style: inside;
-  margin-left: 1rem;
+  list-style: disc;
+  margin-left: 2rem;
   padding: 0.3rem 0;
   line-height: 1.5rem;
+}
+
+.content ul ul {
+  list-style: circle;
 }
 
 .content li {
