@@ -54,7 +54,8 @@
 }
 
 .content p code {
-  background-color: #636363;
+  background-color: rgba(79, 126, 255, 0.1);
+  color: rgb(255, 78, 196, 0.8);
   margin: 0 0.1rem;
   padding: 0.1rem 0.2rem;
   border-radius: 5px;
