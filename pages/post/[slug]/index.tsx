@@ -9,8 +9,9 @@ import { useRouter } from 'next/dist/client/router';
 import Button from '../../../components/button/button';
 import styles from './post-page.module.css';
 import Prism from 'prismjs';
-import { useEffect } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import { ShareButtons } from '../../../components/share-buttons';
+import { CategoryTag } from '../../../components/category-tag';
 
 type PostPageProps = {
   frontmatter: FrontMatterType,
@@ -21,6 +22,16 @@ type PostPageProps = {
 export default function PostPage(props: PostPageProps) {
   const { frontmatter, slug, content } = props;
   const router = useRouter();
+  // ---------------- handler ----------------
+  /**
+   * カテゴリクリック時のハンドラ
+   * 
+   * カテゴリページヘのページ遷移
+   */
+   const handlerClickCategory = useCallback((category: string) => {
+    router.push(`/category/${category}`)
+  }, []);
+  // ---------------- useEffect ----------------
   useEffect(() => {
     Prism.highlightAll();
   }, []);
@@ -48,8 +59,18 @@ export default function PostPage(props: PostPageProps) {
         <Button label="< back" onClick={() => { router.push('/') }} />
         {/* ページの内容 */}
         <div className={styles.post}>
-          <h1 className={styles.title}>{`[${frontmatter.category}] ${frontmatter.title}`}</h1>
-          <p className="post-date">{frontmatter.date}</p>
+          <h1 className={styles.title}>{frontmatter.title}</h1>
+          <p>
+            <span className="post-date">{frontmatter.date}</span>
+            {frontmatter.category.split(',').map((v) => (
+            <CategoryTag
+              category={v}
+              onClick={() => {
+                handlerClickCategory(v);
+              }}
+            />
+          ))}
+          </p>
           <div className={styles.thumbnailWrapper}>
             <img src={frontmatter.cover_image} alt="" />
           </div>

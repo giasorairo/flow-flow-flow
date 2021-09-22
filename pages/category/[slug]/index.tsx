@@ -43,9 +43,11 @@ export async function getStaticPaths() {
     const markdownWithMeta = fs.readFileSync(path.join('posts', fileName), 'utf-8');
     const { data: frontmatter } = matter(markdownWithMeta);
     const { category } = frontmatter;
-    if (category && !a.includes(category)) {
-      a.push(category);
-    }
+    (category as string).split(',').forEach((c) => {
+      if (c && !a.includes(c)) {
+        a.push(c);
+      }
+    });
     return a;
   }, []);
   const paths = categories.map((category) => ({
@@ -78,7 +80,7 @@ export async function getStaticProps({ params: { slug } }) {
   });
   // カテゴリで記事を絞り込みして、日付でソート
   const displayPost = posts
-    .filter((post) => post.frontmatter.category === slug)
+    .filter((post) => post.frontmatter.category.split(',').includes(slug))
     .sort(sortByDate);
   return {
     props: { posts: displayPost, category: slug }

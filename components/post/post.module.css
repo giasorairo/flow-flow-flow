@@ -26,14 +26,14 @@
   margin: 0.5rem 0;
 }
 
-.categoryTag {
+/* .categoryTag {
   margin-left: 1rem;
   color: rgb(79, 126, 255);
 }
 
 .categoryTag:hover {
   color: rgb(255, 78, 196);;
-}
+} */
 
 @media screen and (max-width: 600px) {
   .thumbnailWrapper img {
