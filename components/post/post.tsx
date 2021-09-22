@@ -4,6 +4,7 @@ import { useCallback } from 'react';
 import { PostType } from '../../models';
 import Button from '../button/button';
 import styles from './post.module.css';
+import { CategoryTag } from '../../components/category-tag';
 
 type PostProps = {
   post: PostType,
@@ -17,10 +18,8 @@ export default function Post (props: PostProps) {
    * 
    * カテゴリページヘのページ遷移
    */
-  const handlerClickCategory = useCallback((e: React.MouseEvent<HTMLSpanElement, MouseEvent>) => {
-    e.preventDefault();
-    e.stopPropagation();
-    router.push(`/category/${post.frontmatter.category}`)
+  const handlerClickCategory = useCallback((category: string) => {
+    router.push(`/category/${category}`)
   }, [post]);
   return (
     <div className={styles.card} onClick={() => { router.push(`/post/${post.slug}`)}}>
@@ -30,13 +29,18 @@ export default function Post (props: PostProps) {
         </div>
         <p>
           {post.frontmatter.date}
-          <span
-            className={styles.categoryTag}
-            onClick={handlerClickCategory}>
-            {`#${post.frontmatter.category}`}
-          </span>
+          {post.frontmatter.category.split(',').map((v) => (
+            <CategoryTag
+              category={v}
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                handlerClickCategory(v);
+              }}
+            />
+          ))}
         </p>
-        <h2 className={styles.title}>{`[${post.frontmatter.category}] ${post.frontmatter.title}`}</h2>
+        <h2 className={styles.title}>{post.frontmatter.title}</h2>
         <p>{post.frontmatter.excerpt}...</p>
         <div className={styles.readMoreButtonWrapper}>
           <Button
