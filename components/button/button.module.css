@@ -1,6 +1,11 @@
 .button {
-  color: rgb(240, 240, 240);
-  border: solid rgb(240, 240, 240) 1px;
+  color: rgb(79, 126, 255);
+  border: solid rgb(79, 126, 255) 1px;
   padding: 10px;
   border-radius: 5px;
+}
+
+.button:hover {
+  color: rgb(255, 78, 196);
+  border: solid rgb(255, 78, 196) 1px;
 }

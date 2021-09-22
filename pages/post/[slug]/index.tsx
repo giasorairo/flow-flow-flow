@@ -45,8 +45,8 @@ export default function PostPage(props: PostPageProps) {
         <meta name="twitter:card" key="twitterCard" content="summary_large_image" />
         <meta name="twitter:image" key="twitterImage" content={`${process.env.NEXT_PUBLIC_URL}/${frontmatter.cover_image}`} />
         </Head>
-        {/* ページの内容 */}
         <Button label="< back" onClick={() => { router.push('/') }} />
+        {/* ページの内容 */}
         <div className={styles.post}>
           <h1 className={styles.title}>{`[${frontmatter.category}] ${frontmatter.title}`}</h1>
           <p className="post-date">{frontmatter.date}</p>

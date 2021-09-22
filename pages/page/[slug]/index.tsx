@@ -69,7 +69,7 @@ export async function getStaticProps({ params: { slug } }) {
     const { data: frontmatter } = matter(markdownWithMeta);
     // return
     return {
-      slug,
+      slug: fileName.replace('.md', ''),
       frontmatter: frontmatter as FrontMatterType,
     }
   });

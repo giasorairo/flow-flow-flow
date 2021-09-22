@@ -10,9 +10,9 @@
 .pageNationWrapper > span {
   padding: 0 5px;
   cursor: pointer;
-  color: rgb(247, 150, 121);
+  color: rgb(79, 126, 255);
 }
 
 .pageNationWrapper > span:hover {
-  color: rgb(247, 189, 172);
+  color: rgb(255, 78, 196);
 }

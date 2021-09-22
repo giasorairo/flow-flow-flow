@@ -3,7 +3,8 @@
   padding: 80px;
   font-size: 1.5rem;
   cursor: pointer;
-  color: rgb(240, 240, 240);
+  color: rgb(70, 70, 70);
+  font-weight: bold;
 }
 
 .footer {
