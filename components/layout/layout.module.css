@@ -14,3 +14,7 @@
   align-items: center;
   justify-content: center;
 }
+
+.headerTitle {
+  font-size: 2rem;
+}
