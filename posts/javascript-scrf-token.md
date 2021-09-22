@@ -28,19 +28,21 @@ category: 'JavaScript,セキュリティ'
 - 2.fetchでのリクエストのヘッダに持たせるという処理
 
 というふたつに分解することができる。
-で、自分が今回詰まったのが、`1.CSRF対策でレスポンスヘッダからtokenを取得する処理` こっちの処理。今回のケースではレスポンスのヘッダの`X-CSRF-TOKEN`というキーの値でtokenが渡されていたけど、`response.headers.get('X-CSRF-TOKEN')`で取得することができなかった。
+で、自分が今回詰まったのが、`1.CSRF対策でレスポンスヘッダからtokenを取得する処理` こっちの処理。今回のケースではレスポンスヘッダの`X-CSRF-TOKEN`というキーでtokenが渡されていた。でも`response.headers.get('X-CSRF-TOKEN')`で取得することができなかった。
 
 <a id="2"></a>
 
 ## エラー内容
 別にエラーが出たわけではない。ただ`response.headers.get('X-CSRF-TOKEN')`の返り値が`null`だった。
 
-でもレスポンスヘッダの他の`Content-Language`とか`Content-Type`は`response.headers.get('Content-Language')`, `response.headers.get('Content-Type')`で取得できる。なぜ`X-CSRF-TOKEN`は取得できないのか。
+でもレスポンスヘッダの他の`Content-Language`は`response.headers.get('Content-Language')`で取得できるし、`Content-Type`は, `response.headers.get('Content-Type')`で取得できる。
+
+なぜ`X-CSRF-TOKEN`は取得できないのか。
 
 <a id="3"></a>
 
 ## 調査
-デベロッパーツールのNetworkでレスポンスヘッダを確認すると、`X-CSRF-TOKEN`が token を保持している。ちゃんとレスポンスヘッダは`X-CSRF-TOKEN`を持っているのに、`response.headers.get('X-CSRF-TOKEN')`で取得できない。困った。
+デベロッパーツールのNetworkでレスポンスヘッダを確認すると、`X-CSRF-TOKEN`があって、値として token を持っている。ちゃんとレスポンスヘッダは`X-CSRF-TOKEN`を持っているということだ。なのに`response.headers.get('X-CSRF-TOKEN')`で取得できない。困った。
 
 ググった。出てきた。
 
@@ -62,9 +64,9 @@ cors のせいで`response.headers.get()` でデフォルトで許可されて�
 <a id="5"></a>
 
 ## 解決策
-自分はフロントエンドエンジニアなので、サーバサイドの担当者に上記の調査内容を報告して、「レスポンスヘッダの参照を許可するようにしてください」と依頼を投げた。バックエンドは Laravel を使っているらしく、サーバサイドの人から「`Access-Control-Expose-Headers: X-CSRF-TOKEN`っていう記述追加したからためしてみて」と返ってきて、試したらちゃんと取得できた。
+自分はフロントエンドエンジニアなので、サーバサイドの担当者に上記の調査内容を報告して、「レスポンスヘッダの`X-CSRF-TOKEN`の参照を許可するようにしてください」と依頼を投げた。バックエンドは Laravel を使っているらしく、サーバサイドの人から「`Access-Control-Expose-Headers: X-CSRF-TOKEN`っていう記述追加したからためしてみて」と返ってきて、試したらちゃんと取得できた。
 
-token を取得するときのコードはこんなかんじ。このtokenをとこかに保持しておいて、リクエストのときに使用する。
+token を取得するときのコードはこんなかんじ。このtokenをどこかに保持しておいて、リクエストのときに使用する。
 
 ```typescript
 // token取得
@@ -76,13 +78,13 @@ await fetch('api/login')
 
 // tokenを持たせてリクエスト
 const myHeaders = new Headers();
-// このtokenはどっかに保持しておいたtoken
+// このtokenはレスポンスのヘッダから取得してどっかに保持しておいたtoken
 headers.set('X-CSRF-TOKEN', token);
 await fetch('api/hoge', { method: 'POST', headers: myHeaders });
 
 ```
 
-こんなかんじ。あんまりセキュリティ周りとか気にしたことなかったので(大問題)今回はcsrfの勉強もできてよかった。
+あんまりセキュリティ周りとか気にしたことなかったので(大問題)今回はcsrfの勉強もできてよかった。
 
 <a id="6"></a>
 
