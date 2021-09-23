@@ -41,7 +41,7 @@
   font-size: 1rem;
   padding: 0.5rem 0;
   line-height: 1.5rem;
-  color: rgb(70, 70, 70)
+  color: rgb(70, 70, 70);
 }
 
 .content h2 {
@@ -54,8 +54,8 @@
 }
 
 .content p code {
-  background-color: rgba(79, 126, 255, 0.1);
-  color: rgb(255, 78, 196, 0.8);
+  background-color: rgba(255, 78, 196, 0.2);
+  color: rgb(70, 70, 70);
   margin: 0 0.1rem;
   padding: 0.1rem 0.2rem;
   border-radius: 5px;
