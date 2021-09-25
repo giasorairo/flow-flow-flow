@@ -1,9 +1,17 @@
+@use './variables';
+// $primary-color: rgb(79, 126, 255);
+// $secondary-color: rgb(255, 78, 196);
+// // 背景色
+// $background-color: rgba(79, 126, 255, 0.3);
+// // フォント色
+// $primary-font-color: rgb(70, 70, 70);
+
 body {
   width: min(92%, 600px);
   margin: 0 auto;
-  /* background: linear-gradient(rgb(79, 126, 255, 0.3), rgb(255, 78, 196, 0.3)); */
-  background: rgb(79, 126, 255, 0.3);
-  color: rgb(70, 70, 70);
+  /* background: linear-gradient(rgba(79, 126, 255, 0.3), rgba(255, 78, 196, 0.3)); */
+  background: variables.$background-color;
+  color: variables.$primary-font-color;
   font-family: "Source Sans Pro",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   letter-spacing: 0.05rem;
   font-size: 0.95rem;
@@ -17,21 +25,21 @@ title {
 }
 
 h1 {
-  color: rgb(70, 70, 70);
+  color: variables.$primary-font-color;
   font-size: 1.5rem;
   font-weight: bold;
   padding: 0.5rem 0;
 }
 
 h2 {
-  color: rgb(70, 70, 70);
+  color: variables.$primary-font-color;
   font-size: 1.3rem;
   font-weight: bold;
   padding: 0.5rem 0;
 }
 
 h3 {
-  color: rgb(70, 70, 70);
+  color: variables.$primary-font-color;
   font-size: 1.2rem;
   font-weight: bold;
   padding: 0.5rem 0;
@@ -41,15 +49,15 @@ p {
   font-size: 1rem;
   /* padding: 0.5rem 0; */
   line-height: 1.5rem;
-  color: rgb(70, 70, 70);
+  color: variables.$primary-font-color;
 }
 
 a {
-  color: rgb(79, 126, 255);
+  color: variables.$primary-color;
 }
 
 a:hover {
-  color: rgb(255, 78, 196);
+  color: variables.$secondary-color;
 }
 
 /* 記事内の画像の中央寄せ */
