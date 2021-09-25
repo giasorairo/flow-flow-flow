@@ -59,7 +59,7 @@ category: 'JavaScript,セキュリティ'
 <a id="4"></a>
 
 ## 原因
-cors のせいで`response.headers.get()` でデフォルトで許可されているヘッダの値以外を取得できないように鳴っていたので、サーバサイドで`Access-Control-Allow-Headers(フレームワークによって違う)`を宣言して貰う必要がある。
+cors のせいで`response.headers.get()` でデフォルトで許可されているヘッダの値以外を取得できないようになっていたので、サーバサイドで`Access-Control-Allow-Headers(フレームワークによって違う)`を宣言して貰う必要がある。
 
 <a id="5"></a>
 
@@ -75,13 +75,14 @@ await fetch('api/login')
     // トークン取得 (どっかに保持しておく)
     const token = response.headers.get('X-CSRF-TOKEN');
   });
+```
 
+```typescript
 // tokenを持たせてリクエスト
 const myHeaders = new Headers();
 // このtokenはレスポンスのヘッダから取得してどっかに保持しておいたtoken
-headers.set('X-CSRF-TOKEN', token);
+myHeaders.set('X-CSRF-TOKEN', token);
 await fetch('api/hoge', { method: 'POST', headers: myHeaders });
-
 ```
 
 あんまりセキュリティ周りとか気にしたことなかったので(大問題)今回はcsrfの勉強もできてよかった。
