@@ -1,9 +1,8 @@
 import { useRouter } from 'next/dist/client/router';
-import Link from 'next/link';
 import React, { useCallback } from 'react';
 import { PostType } from '../../models';
 import Button from '../button/button';
-import styles from './post.module.css';
+import styles from './post.module.scss';
 import { CategoryTag } from '../../components/category-tag';
 
 type PostProps = {
@@ -24,7 +23,7 @@ export default function Post (props: PostProps) {
   return (
     <div className={styles.card} onClick={() => { router.push(`/post/${post.slug}`)}}>
       <>
-        <div className={styles.thumbnailWrapper}>
+        <div className={styles['thumbnail-wrapper']}>
           <img src={post.frontmatter.cover_image} alt="" />
         </div>
         <p>{post.frontmatter.date}</p>
@@ -42,9 +41,9 @@ export default function Post (props: PostProps) {
             </React.Fragment>
           ))}
         </p>
-        <h2 className={styles.title}>{post.frontmatter.title}</h2>
+        <h2 className={styles['title']}>{post.frontmatter.title}</h2>
         <p>{post.frontmatter.excerpt}...</p>
-        <div className={styles.readMoreButtonWrapper}>
+        <div className={styles['read-more-button-wrapper']}>
           <Button
             label="read more >"
             onClick={() => { router.push(`/post/${post.slug}`)}}

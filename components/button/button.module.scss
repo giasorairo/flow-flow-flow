@@ -1,0 +1,13 @@
+@use '../../styles//variables';
+
+.button {
+  color: variables.$primary-color;
+  border: solid variables.$primary-color 2px;
+  padding: 10px;
+  border-radius: 5px;
+
+  &:hover {
+    color: variables.$secondary-color;
+    border: solid variables.$secondary-color 2px;
+  }
+}

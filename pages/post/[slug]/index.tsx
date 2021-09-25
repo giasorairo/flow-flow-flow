@@ -7,7 +7,7 @@ import Layout from '../../../components/layout/layout';
 import { FrontMatterType } from '../../../models';
 import { useRouter } from 'next/dist/client/router';
 import Button from '../../../components/button/button';
-import styles from './post-page.module.css';
+import styles from './post-page.module.scss';
 import Prism from 'prismjs';
 import React, { useCallback, useEffect } from 'react';
 import { ShareButtons } from '../../../components/share-buttons';
@@ -73,7 +73,7 @@ export default function PostPage(props: PostPageProps) {
               </React.Fragment>
             ))}
           </p>
-          <div className={styles.thumbnailWrapper}>
+          <div className={styles['thumbnail-wrapper']}>
             <img src={frontmatter.cover_image} alt="" />
           </div>
           <div className={`${styles.content} prose`}>
