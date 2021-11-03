@@ -51,10 +51,10 @@ export default function PostPage(props: PostPageProps) {
           content={frontmatter.excerpt}
         />
         <meta property="og:type" content="article" />
-        <meta property="og:image" key="ogImage" content={`${process.env.NEXT_PUBLIC_URL}/${frontmatter.cover_image}`} />
+        <meta property="og:image" key="ogImage" content={`${process.env.NEXT_PUBLIC_URL}/${frontmatter.cover_image || '/images/icon/icon.png'}`} />
         {/* twitterOGP */}
         <meta name="twitter:card" key="twitterCard" content="summary_large_image" />
-        <meta name="twitter:image" key="twitterImage" content={`${process.env.NEXT_PUBLIC_URL}/${frontmatter.cover_image}`} />
+        <meta name="twitter:image" key="twitterImage" content={`${process.env.NEXT_PUBLIC_URL}/${frontmatter.cover_image || '/images/icon/icon.png'}`} />
         </Head>
         <Button label="< back" onClick={() => { router.push('/') }} />
         {/* ページの内容 */}
@@ -73,9 +73,14 @@ export default function PostPage(props: PostPageProps) {
               </React.Fragment>
             ))}
           </p>
-          <div className={styles['thumbnail-wrapper']}>
-            <img src={frontmatter.cover_image} alt="" />
-          </div>
+          {frontmatter.cover_image
+            ? (
+              <div className={styles['thumbnail-wrapper']}>
+                <img src={frontmatter.cover_image} alt="" />
+              </div>
+            )
+            : <></>
+          }
           <div className={`${styles.content} prose`}>
             <div dangerouslySetInnerHTML={{ __html: markd(content) }} />
           </div>

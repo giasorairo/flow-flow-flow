@@ -23,9 +23,14 @@ export default function Post (props: PostProps) {
   return (
     <div className={styles.card} onClick={() => { router.push(`/post/${post.slug}`)}}>
       <>
-        <div className={styles['thumbnail-wrapper']}>
-          <img src={post.frontmatter.cover_image} alt="" />
-        </div>
+        {post.frontmatter.cover_image
+          ? (
+            <div className={styles['thumbnail-wrapper']}>
+              <img src={post.frontmatter.cover_image} alt="" />
+            </div>
+          )
+          : <></>
+        }
         <p>{post.frontmatter.date}</p>
         <p>
           {post.frontmatter.category.split(',').map((v, i) => (
