@@ -51,7 +51,7 @@ create-react-app の公式に記述があるとのことなので、一応読ん
 
 ```tsx
 // 静的ファイルとしてレスポンス
- app.use('/admin', express.static(`${__dirname}/public/admin`));
+app.use('/admin', express.static(`${__dirname}/public/admin`));
 
 //　admin/*　でリクエストが来たときは　public/admin/index.html を返す
 app.use('/admin/*', (req, res) => {
