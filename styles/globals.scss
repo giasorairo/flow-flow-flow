@@ -87,3 +87,26 @@ a:hover {
   width: 100%;
   height: 100%;
 }
+
+/* 引用 */
+blockquote{
+  display: block;
+  margin: 0.8rem 0;
+  border-left: variables.$primary-color 4px solid;
+  padding: 3rem 2rem 2rem 2rem;
+  // background-color: variables.$background-color-secondary;
+  line-height: 1.4rem;
+}
+
+blockquote::before {
+  margin-top: -1rem;
+  margin-left: -1rem;
+  position: absolute;
+  content: '"';
+  font-size: 3rem;
+  color: variables.$primary-color;
+}
+
+blockquote::after {
+  content: '';
+}
