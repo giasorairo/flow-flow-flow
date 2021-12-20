@@ -47,7 +47,7 @@ export default function Post (props: PostProps) {
           ))}
         </p>
         <h2 className={styles['title']}>{post.frontmatter.title}</h2>
-        <p>{post.frontmatter.excerpt}...</p>
+        {/* <p>{post.frontmatter.excerpt}...</p> */}
         <div className={styles['read-more-button-wrapper']}>
           <Button
             label="read more >"
