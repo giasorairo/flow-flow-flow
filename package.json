@@ -1,10 +1,10 @@
 {
-  "name": "learn-starter",
+  "name": "flow-flow-flow",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "deploy": "next build && next export && firebase deploy --only hosting",
+    "deploy": "next build && next export && next-sitemap --config sitemap.config.js && firebase deploy --only hosting",
     "start": "next start"
   },
   "dependencies": {
@@ -20,6 +20,7 @@
     "@types/node": "^16.9.0",
     "@types/react": "^17.0.20",
     "babel-plugin-prismjs": "^2.1.0",
+    "next-sitemap": "^1.6.203",
     "react-share": "^4.4.0",
     "sass": "^1.42.1",
     "typescript": "^4.4.2"
