@@ -40,21 +40,22 @@ export default function PostPage(props: PostPageProps) {
       <>
         {/* headタグの中の上書き */}
         <Head>
-          {/* OGPの設定 */}
-        <meta name="description" key="description" content={frontmatter.excerpt} />
-        <meta property="og:site_name" key="ogSiteName" content="二畳ラボ" />
-        <meta property="og:title" key="ogTItle" content={frontmatter.title} />
-        <meta property="og:url" content={`${process.env.NEXT_PUBLIC_URL}/${slug}`} />
-        <meta
-          property="og:description"
-          key="ogDescription"
-          content={frontmatter.excerpt}
-        />
-        <meta property="og:type" content="article" />
-        <meta property="og:image" key="ogImage" content={`${process.env.NEXT_PUBLIC_URL}/${frontmatter.cover_image || '/images/icon/icon.png'}`} />
-        {/* twitterOGP */}
-        <meta name="twitter:card" key="twitterCard" content="summary_large_image" />
-        <meta name="twitter:image" key="twitterImage" content={`${process.env.NEXT_PUBLIC_URL}/${frontmatter.cover_image || '/images/icon/icon.png'}`} />
+          <title>{frontmatter.title}</title>
+            {/* OGPの設定 */}
+          <meta name="description" key="description" content={frontmatter.excerpt} />
+          <meta property="og:site_name" key="ogSiteName" content="二畳ラボ" />
+          <meta property="og:title" key="ogTItle" content={frontmatter.title} />
+          <meta property="og:url" content={`${process.env.NEXT_PUBLIC_URL}/${slug}`} />
+          <meta
+            property="og:description"
+            key="ogDescription"
+            content={frontmatter.excerpt}
+          />
+          <meta property="og:type" content="article" />
+          <meta property="og:image" key="ogImage" content={`${process.env.NEXT_PUBLIC_URL}/${frontmatter.cover_image || '/images/icon/icon.png'}`} />
+          {/* twitterOGP */}
+          <meta name="twitter:card" key="twitterCard" content="summary_large_image" />
+          <meta name="twitter:image" key="twitterImage" content={`${process.env.NEXT_PUBLIC_URL}/${frontmatter.cover_image || '/images/icon/icon.png'}`} />
         </Head>
         <Button label="< back" onClick={() => { router.push('/') }} />
         {/* ページの内容 */}
