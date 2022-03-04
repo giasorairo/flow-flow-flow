@@ -31,7 +31,9 @@ export const ShareButtons = (props: ShareButtonsPropsType) => {
           // 記事のURL
           url={`${process.env.NEXT_PUBLIC_URL}/post/${slug}`}
           // 画像のURL
-          media={`${process.env.NEXT_PUBLIC_URL}/${frontmatter.cover_image}`}
+          media={frontmatter.cover_image
+              ? `${process.env.NEXT_PUBLIC_URL}/${frontmatter.cover_image}`
+              : `${process.env.NEXT_PUBLIC_URL}/images/icon/icon.png`}
           description={`${frontmatter.title}`}
         >
           <PinterestIcon size={32} round />
