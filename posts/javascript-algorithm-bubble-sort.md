@@ -28,7 +28,7 @@ Array.sort((a, b) ⇒ a - b); みたいな記述はいつも使ってるけれ�
 
 バブルソートについていろいろな記事や動画をみたけど、この動画がいちばんわかりやすかった気がする。並び替えのところで分割代入使ってるのも好き。他の記事では大体 tmp みたいな変数に一時保存して、3行くらいかけてやってる処理が分割代入つかったら1行だもんな。正直、頭悪いから初めは何やってるのか意味わからなかったけど⚡️　tmp という変数を使って3行かけて入れ替え処理を書いた方が自分は理解しやすいと思う。けど、分割代入カッコいいからな。カッコつけていかないとな🕶
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/5hApch5oV3E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/5hApch5oV3E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## いろんな記事を摂取した私のバブルソートへの理解度
 
