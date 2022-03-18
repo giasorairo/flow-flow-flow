@@ -1,5 +1,5 @@
 ---
-title: '[JS] JavaScript でアルゴリズム入門した私の成長記録(Lv.1) - バブルソート編'
+title: '[JS] JavaScript でアルゴリズム入門したので成長記録をつけていく(Lv.1) - バブルソート編'
 date: '2022/3/18'
 excerpt: ''
 cover_image: ''
