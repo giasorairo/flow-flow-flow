@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import { GA_ID } from '../../utils/gtag';
 import styles from './layout.module.css';
 
 export default function Layout(props: { children: JSX.Element }) {
