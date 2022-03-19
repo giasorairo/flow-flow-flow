@@ -91,6 +91,13 @@
 
 .content li {
   /* padding: 0.2rem 0; */
+  code {
+    background-color: rgba(255, 78, 196, 0.2);
+    color: rgb(70, 70, 70);
+    margin: 0 0.1rem;
+    padding: 0.1rem 0.2rem;
+    border-radius: 5px;
+  }
 }
 
 /* .content img {
