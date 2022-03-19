@@ -32,6 +32,11 @@ export default function Layout(props: { children: JSX.Element }) {
         {/* twitterOGP */}
         <meta name="twitter:card" key="twitterCard" content="summary_large_image" />
         <meta name="twitter:image" key="twitterImage" content={`${process.env.NEXT_PUBLIC_URL}/images/icon/icon.png`} />
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7112973654947785"
+          crossOrigin="anonymous"
+        ></script>
       </Head>
       <header className={styles.header}>
         <Link href="/"><div className={styles.headerTitle}>flow-flow-flow</div></Link>
