@@ -288,6 +288,12 @@ Ran all test suites.
 }
 ```
 
+## おまけ2
+
+リポジトリ作ったので、自分と同じような環境でスキルチェックのコーディングされたい方は clone して使ってください⚡️
+
+[https://github.com/giasorairo/paiza-skill-check-with-es6](https://github.com/giasorairo/paiza-skill-check-with-es6)
+
 ## 感想
 
 これで開発体験がよくなったので、paiza のスキルチェックのモチベーションがちょっとあがった。かもしれない。
