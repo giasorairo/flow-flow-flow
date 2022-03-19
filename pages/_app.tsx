@@ -2,13 +2,17 @@ import React from 'react';
 import { AppProps } from 'next/dist/shared/lib/router/router';
 import '../styles/destyle.css';
 import '../styles/globals.scss';
-// import '../components/post/post.scss';
-// import '../components/post/post.scss';
+import GoogleAnalytics from '../components/google-analytics/google-analytics';
+import usePageView from '../hooks/use-page-view/use-page-view';
 
 function App(props: AppProps) {
   const { Component, pageProps } = props;
+  usePageView();
   return (
-    <Component {...pageProps} />
+    <>
+      <GoogleAnalytics />
+      <Component {...pageProps} />
+    </>
   );
 }
 
