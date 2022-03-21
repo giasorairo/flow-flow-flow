@@ -31,7 +31,7 @@ export default function Page(props: PagePropsType) {
           <div className={styles.pageNationWrapper}>
             {pages.map((v, i) => v.toString() === slug
               ? <span className={pageStyles.disabledPageNation}>{v}</span>
-              : <Link key={i} href={`/page/${v}`}><span>{v}</span></Link>)}
+              : <Link key={i} href={`/page/${v}`}><a><span>{v}</span></a></Link>)}
          </div>
         </div>
       </Layout>

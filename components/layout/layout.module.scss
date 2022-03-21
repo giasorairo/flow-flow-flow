@@ -4,6 +4,11 @@
   cursor: pointer;
   color: rgb(70, 70, 70);
   font-weight: bold;
+
+  &-title {
+    font-size: 2rem;
+    color: rgb(70, 70, 70);
+  }
 }
 
 .footer {
@@ -12,8 +17,4 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.headerTitle {
-  font-size: 2rem;
 }

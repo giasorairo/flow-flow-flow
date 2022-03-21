@@ -28,7 +28,7 @@ export default function Home(props: HomeProps) {
           </div>
         </main>
         <div className={styles.pageNationWrapper}>
-          {pages.map((v, i) => <Link key={i} href={`/page/${v}`}><span>{v}</span></Link>)}
+          {pages.map((v, i) => <Link key={i} href={`/page/${v}`}><a><span>{v}</span></a></Link>)}
         </div>
       </div>
     </Layout>
