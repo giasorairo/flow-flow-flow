@@ -4,6 +4,7 @@ import { PostType } from '../../models';
 import Button from '../button/button';
 import styles from './post.module.scss';
 import { CategoryTag } from '../../components/category-tag';
+import Link from 'next/link';
 
 type PostProps = {
   post: PostType,
@@ -12,47 +13,38 @@ type PostProps = {
 export default function Post (props: PostProps) {
   const router = useRouter();
   const { post } = props;
-  /**
-   * カテゴリクリック時のハンドラ
-   * 
-   * カテゴリページヘのページ遷移
-   */
-  const handlerClickCategory = useCallback((category: string) => {
-    router.push(`/category/${category}`)
-  }, [post]);
   return (
-    <div className={styles.card} onClick={() => { router.push(`/post/${post.slug}`)}}>
+    <div className={styles.card}>
       <>
-        {post.frontmatter.cover_image
+        {/* {post.frontmatter.cover_image
           ? (
             <div className={styles['thumbnail-wrapper']}>
               <img src={post.frontmatter.cover_image} alt="" />
             </div>
           )
           : <></>
-        }
+        } */}
         <p>{post.frontmatter.date}</p>
         <p>
           {post.frontmatter.category.split(',').map((v, i) => (
             <React.Fragment key={i}>
               <CategoryTag
                 category={v}
-                onClick={(e) => {
-                  e.preventDefault();
-                  e.stopPropagation();
-                  handlerClickCategory(v);
-                }}
               />
             </React.Fragment>
           ))}
         </p>
-        <h2 className={styles['title']}>{post.frontmatter.title}</h2>
+        <Link href={`/post/${post.slug}`}><a><h2 className={styles['title']}>{post.frontmatter.title}</h2></a></Link>
         {/* <p>{post.frontmatter.excerpt}...</p> */}
         <div className={styles['read-more-button-wrapper']}>
-          <Button
-            label="read more >"
-            onClick={() => { router.push(`/post/${post.slug}`)}}
-          />
+          <Link href={`/post/${post.slug}`}>
+            <a>
+              <Button
+                label="read more >"
+                onClick={() => {}}
+              />
+            </a>
+          </Link>
         </div>
       </>
     </div>

@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { GA_ID } from '../../utils/gtag';
-import styles from './layout.module.css';
+import styles from './layout.module.scss';
 
 export default function Layout(props: { children: JSX.Element }) {
   const { children } = props;
@@ -39,10 +39,10 @@ export default function Layout(props: { children: JSX.Element }) {
         ></script>
       </Head>
       <header className={styles.header}>
-        <Link href="/"><div className={styles.headerTitle}>flow-flow-flow</div></Link>
+        <Link href="/"><a><div className={styles['header-title']}>flow-flow-flow</div></a></Link>
       </header>
       {children}
-      <footer className={styles.footer}>ふったー</footer>
+      <footer className={styles['footer']}>ふったー</footer>
     </div>
   );
 }

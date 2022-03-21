@@ -1,7 +1,6 @@
 @use '../../styles/variables';
 
 .card {
-  cursor: pointer;
 
   .thumbnail-wrapper {
     /* background-color: rgb(50, 50, 50); */
@@ -31,6 +30,10 @@
   .title {
     margin: 0.1rem 0;
     line-height: 1.7rem;
+
+    &:hover {
+      color: variables.$primary-color;
+    }
   }
 
   .read-more-button-wrapper {

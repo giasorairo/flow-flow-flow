@@ -12,6 +12,7 @@ import Prism from 'prismjs';
 import React, { useCallback, useEffect } from 'react';
 import { ShareButtons } from '../../../components/share-buttons';
 import { CategoryTag } from '../../../components/category-tag';
+import Link from 'next/link';
 
 type PostPageProps = {
   frontmatter: FrontMatterType,
@@ -22,15 +23,6 @@ type PostPageProps = {
 export default function PostPage(props: PostPageProps) {
   const { frontmatter, slug, content } = props;
   const router = useRouter();
-  // ---------------- handler ----------------
-  /**
-   * カテゴリクリック時のハンドラ
-   * 
-   * カテゴリページヘのページ遷移
-   */
-   const handlerClickCategory = useCallback((category: string) => {
-    router.push(`/category/${category}`)
-  }, []);
   // ---------------- useEffect ----------------
   useEffect(() => {
     Prism.highlightAll();
@@ -57,7 +49,7 @@ export default function PostPage(props: PostPageProps) {
           <meta name="twitter:card" key="twitterCard" content="summary_large_image" />
           <meta name="twitter:image" key="twitterImage" content={`${process.env.NEXT_PUBLIC_URL}/${frontmatter.cover_image || '/images/icon/icon.png'}`} />
         </Head>
-        <Button label="< back" onClick={() => { router.push('/') }} />
+        <Link href="/"><a><Button label="< back" onClick={() => {}} /></a></Link>
         {/* ページの内容 */}
         <div className={styles.post}>
           <h1 className={styles.title}>{frontmatter.title}</h1>
@@ -67,9 +59,6 @@ export default function PostPage(props: PostPageProps) {
               <React.Fragment key={i}>
                 <CategoryTag
                   category={v}
-                  onClick={() => {
-                    handlerClickCategory(v);
-                  }}
                 />
               </React.Fragment>
             ))}
@@ -90,7 +79,7 @@ export default function PostPage(props: PostPageProps) {
         <div className={styles.shareButtonsWrapper}>
           <ShareButtons slug={slug} frontmatter={frontmatter} />
         </div>
-        <Button label="< back" onClick={() => { router.push('/') }} />
+        <Link href="/"><a><Button label="< back" onClick={() => {}} /></a></Link>
       </>
     </Layout>
   );
