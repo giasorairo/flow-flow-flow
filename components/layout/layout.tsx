@@ -1,13 +1,14 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import { GA_ID } from '../../utils/gtag';
+// import { GA_ID } from '../../utils/gtag';
+import { NavigationBar } from '../navigation-bar/navigation-bar';
 import styles from './layout.module.scss';
 
 export default function Layout(props: { children: JSX.Element }) {
   const { children } = props;
   // ---------------------------- DOM ----------------------------
   return (
-    <div>
+    <>
       <Head>
         <title>flow-flow-flow</title>
         {/* タブ部分のファビコン設定 */}
@@ -38,11 +39,20 @@ export default function Layout(props: { children: JSX.Element }) {
           crossOrigin="anonymous"
         ></script>
       </Head>
-      <header className={styles.header}>
-        <Link href="/"><a><div className={styles['header-title']}>flow-flow-flow</div></a></Link>
-      </header>
-      {children}
-      <footer className={styles['footer']}>ふったー</footer>
-    </div>
+      <div>
+        <header className={styles.header}>
+          <Link href="/"><a><div className={styles['header-title']}>flow-flow-flow</div></a></Link>
+        </header>
+        <div className={styles['container']}>
+          <div className={styles['container-main']}>
+            {children}
+            <footer className={styles['footer']}>ふったー</footer>
+          </div>
+          <div className={styles['container-sidebar']}>
+            <NavigationBar />
+          </div>
+        </div>
+      </div>
+    </>
   );
 }

@@ -6,7 +6,7 @@ import matter from 'gray-matter';
 import { sortByDate } from '../../../utils';
 import Post from '../../../components/post/post';
 import styles from '../../root.module.css';
-import categoryStyles from './category-page.module.css'
+import categoryStyles from './category-page.module.scss'
 import Link from 'next/link';
 
 type CategoryPagePropsType = {
@@ -20,7 +20,7 @@ export default function CategoryPage(props: CategoryPagePropsType) {
     <>
       <Layout>
         <div>
-          <p className={categoryStyles.category}>{`category: ${category}`}</p>
+          <p className={categoryStyles.category}>{category}</p>
           <main>
             <div>
               {posts.map((post, index) => (

@@ -7,8 +7,8 @@
 // $primary-font-color: rgb(70, 70, 70);
 
 body {
-  width: min(92%, 600px);
-  margin: 0 auto;
+  width: 100%;
+  // margin: 0 auto;
   /* background: linear-gradient(rgba(79, 126, 255, 0.3), rgba(255, 78, 196, 0.3)); */
   background: variables.$background-color;
   color: variables.$primary-font-color;

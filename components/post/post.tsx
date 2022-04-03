@@ -36,7 +36,7 @@ export default function Post (props: PostProps) {
         </p>
         <Link href={`/post/${post.slug}`}><a><h2 className={styles['title']}>{post.frontmatter.title}</h2></a></Link>
         {/* <p>{post.frontmatter.excerpt}...</p> */}
-        <div className={styles['read-more-button-wrapper']}>
+        {/* <div className={styles['read-more-button-wrapper']}>
           <Link href={`/post/${post.slug}`}>
             <a>
               <Button
@@ -45,7 +45,7 @@ export default function Post (props: PostProps) {
               />
             </a>
           </Link>
-        </div>
+        </div> */}
       </>
     </div>
   );

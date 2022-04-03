@@ -11,10 +11,26 @@
   }
 }
 
-.footer {
-  margin-top: 20px;
-  height: 80px;
+.container {
   display: flex;
-  align-items: center;
   justify-content: center;
+
+  &-main {
+    width: min(92%, 800px);
+    .footer {
+      margin-top: 20px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  &-sidebar {
+    display: none;
+    @media screen and (min-width: 1200px) {
+      display: block;
+      padding: 1.5rem;
+    }
+  }
 }
