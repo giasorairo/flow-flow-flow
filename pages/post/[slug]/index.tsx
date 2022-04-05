@@ -51,8 +51,10 @@ export default function PostPage(props: PostPageProps) {
         </Head>
         <Link href="/"><a><Button label="< back" onClick={() => {}} /></a></Link>
         {/* ページの内容 */}
-        <div className={styles.post}>
-          <h1 className={styles.title}>{frontmatter.title}</h1>
+        <main className={styles.post}>
+          <header>
+            <h1 className={styles.title}>{frontmatter.title}</h1>
+          </header>
           <p>{frontmatter.date}</p>
           <p>
             {frontmatter.category.split(',').map((v, i) => (
@@ -74,7 +76,7 @@ export default function PostPage(props: PostPageProps) {
           <div className={`${styles.content} prose`}>
             <div dangerouslySetInnerHTML={{ __html: markd(content) }} />
           </div>
-        </div>
+        </main>
         {/* シェアボタン */}
         <div className={styles.shareButtonsWrapper}>
           <ShareButtons slug={slug} frontmatter={frontmatter} />

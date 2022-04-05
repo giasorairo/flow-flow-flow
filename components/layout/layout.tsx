@@ -40,9 +40,9 @@ export default function Layout(props: { children: JSX.Element }) {
         ></script>
       </Head>
       <div>
-        <header className={styles.header}>
+        <div className={styles.header}>
           <Link href="/"><a><div className={styles['header-title']}>flow-flow-flow</div></a></Link>
-        </header>
+        </div>
         <div className={styles['container']}>
           <div className={styles['container-main']}>
             {children}
