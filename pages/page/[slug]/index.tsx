@@ -41,10 +41,8 @@ export default function Page(props: PagePropsType) {
 
 export async function getStaticPaths() {
   const files = fs.readdirSync(path.join('posts'));
-  // 1ページに表示する記事の数
-  const displayPostNumPerPage = 2;
   // ページURL生成
-  const pages = new Array(Math.ceil(files.length / displayPostNumPerPage)).fill(null).map((_, i) => i + 1);
+  const pages = new Array(Math.ceil(files.length / Number(process.env.DISPLAY_POST_NUM_PER_PAGE))).fill(null).map((_, i) => i + 1);
   const paths = pages.map((v) => ({
     params: {
       slug: v.toString(),

@@ -3,7 +3,7 @@ title: 'ゼロからはじめるデザインを読んだので感想メモ'
 date: '2021/12/20'
 excerpt: ''
 cover_image: ''
-category: 'デザイン'
+category: 'read'
 ---
 
 <a href="https://www.amazon.co.jp/%E3%82%BC%E3%83%AD%E3%81%8B%E3%82%89%E3%81%AF%E3%81%98%E3%82%81%E3%82%8B%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3-%E5%8C%97%E6%9D%91-%E5%B4%87/dp/4797376961?__mk_ja_JP=%E3%82%AB%E3%82%BF%E3%82%AB%E3%83%8A&keywords=%E3%82%BC%E3%83%AD%E3%81%8B%E3%82%89%E5%A7%8B%E3%82%81%E3%82%8B%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3&qid=1640012505&sr=8-1&linkCode=li3&tag=yourunderline-22&linkId=7e7cfacbe8182e4d0417170930a9e8bd&language=ja_JP&ref_=as_li_ss_il" target="_blank"><img border="0" src="https://images-na.ssl-images-amazon.com/images/I/41gX5xB4ouL._SX353_BO1,204,203,200_.jpg" ><p>ゼロからはじめるデザイン</p></a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=yourunderline-22&language=ja_JP&l=li3&o=9&a=4797376961" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />

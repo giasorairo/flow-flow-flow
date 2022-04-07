@@ -1,0 +1,36 @@
+@use '../../styles/variables';
+
+.navigation_bar {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  // border-left: 1px solid variables.$primary-color;
+  box-sizing: border-box;
+  padding: 1rem;
+
+  img {
+    align-self: center;
+    width: 80%;
+    height: 80%;
+    margin-bottom: 2rem;
+  }
+
+  >ul {
+    list-style: none;
+    padding-left: 1rem;
+
+    li {
+      text-decoration: dotted;
+    }
+
+    >ul {
+      list-style: circle;
+      padding-left: 2rem;
+
+      li {
+        padding: 5px 0;
+      }
+    }
+  }
+
+}

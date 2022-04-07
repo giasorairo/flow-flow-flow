@@ -4,6 +4,7 @@ import '../styles/destyle.css';
 import '../styles/globals.scss';
 import GoogleAnalytics from '../components/google-analytics/google-analytics';
 import usePageView from '../hooks/use-page-view/use-page-view';
+import { RecoilRoot } from 'recoil';
 
 function App(props: AppProps) {
   const { Component, pageProps } = props;
@@ -11,7 +12,9 @@ function App(props: AppProps) {
   return (
     <>
       <GoogleAnalytics />
-      <Component {...pageProps} />
+      <RecoilRoot>
+        <Component {...pageProps} />
+      </RecoilRoot>
     </>
   );
 }
