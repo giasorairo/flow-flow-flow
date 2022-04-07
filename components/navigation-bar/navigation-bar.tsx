@@ -2,6 +2,7 @@ import Link from 'next/link';
 import styles from './navigation-bar.module.scss';
 
 export const NavigationBar = () => {
+  
   return (
     <nav className={styles['navigation_bar']}>
       <img src="/images/icon/icon.png" alt="icon" />

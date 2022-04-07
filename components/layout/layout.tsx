@@ -1,11 +1,17 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import { useRecoilValue } from 'recoil';
+import { useNavigationBar } from '../../hooks/use-navigationbar/use-navigationbar';
+import { navigationBarStateAtom } from '../../recoil/atom';
+import { HamburgerMenu } from '../hamburger-menu/hamburger-menu';
 // import { GA_ID } from '../../utils/gtag';
 import { NavigationBar } from '../navigation-bar/navigation-bar';
 import styles from './layout.module.scss';
 
 export default function Layout(props: { children: JSX.Element }) {
   const { children } = props;
+  const navigationBarState = useRecoilValue(navigationBarStateAtom);
+  useNavigationBar();
   // ---------------------------- DOM ----------------------------
   return (
     <>
@@ -49,10 +55,18 @@ export default function Layout(props: { children: JSX.Element }) {
             <footer className={styles['footer']}>
               <a href="https://twitter.com/gia_sorairo">gia&nbsp;</a>のブログ
             </footer>
+            <HamburgerMenu />
           </div>
-          <div className={styles['container-sidebar']}>
+          <div className={styles['container-sidebar-pc']}>
             <NavigationBar />
           </div>
+          {navigationBarState.display
+            ? (
+              <div className={styles['container-sidebar-sp']}>
+                <NavigationBar />
+              </div>
+            )
+            : <></>}
         </div>
       </div>
     </>
