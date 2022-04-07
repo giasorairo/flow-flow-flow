@@ -9,5 +9,5 @@ export const useNavigationBar = () => {
   const setNavigationBarState = useSetRecoilState(navigationBarStateAtom);
   useEffect(() => {
     setNavigationBarState({ display: false });
-  }, [router.locale])
+  }, [router.pathname, router.query])
 };
