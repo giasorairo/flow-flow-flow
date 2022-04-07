@@ -3,7 +3,7 @@ title: '[Express] Reactで作成したSPAをExpressで建てたサーバにホ�
 date: '2021/11/5'
 excerpt: 'Express で建てたサーバに React プロジェクトをホスティングして、静的ファイルでレスポンスさせると、ルート以外のURL直打ちで404が返ってくるので、ちゃんとページが返ってくるようにしたい'
 # cover_image: '/images/collection/css.png'
-category: 'React,Node.js,Express'
+category: 'express,node.js'
 ---
 
 ## 目次

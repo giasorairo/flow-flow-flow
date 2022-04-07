@@ -46,7 +46,9 @@ export default function Layout(props: { children: JSX.Element }) {
         <div className={styles['container']}>
           <div className={styles['container-main']}>
             {children}
-            <footer className={styles['footer']}>ふったー</footer>
+            <footer className={styles['footer']}>
+              <a href="https://twitter.com/gia_sorairo">gia&nbsp;</a>のブログ
+            </footer>
           </div>
           <div className={styles['container-sidebar']}>
             <NavigationBar />

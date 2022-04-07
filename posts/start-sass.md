@@ -3,7 +3,7 @@ title: '[CSS] Sass入門して、Next.jsで作ったブログ(このブログ)�
 date: '2021/9/25'
 excerpt: 'このブログのCSSをSassに置き換えたい。自分はフロントエンジニアなのに、業務ではCSSを書かないので、ほとんどCSSが書けない。このブログのcssも'
 cover_image: '/images/collection/css.png'
-category: 'CSS'
+category: 'css'
 ---
 
 ## 目次

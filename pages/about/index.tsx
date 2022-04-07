@@ -25,7 +25,7 @@ export default function About() {
         <p>
           仕事では electron x react でデスクトップアプリつくってるのがいちばん長い気がします。<br />
           他にも react で web をやったり、create.js で ゲームつくったり。<br />
-          Node.js (express)でバックエンドをやったりしたこともあります。
+          node.js/express でバックエンドをやったりしたこともあります。
         </p>
         <p>TDD を勉強中</p>
         <p>個人開発で自動でお金を稼ぐアプリをつくって働かずに生きていくためにプログラマになりましたが、現実は残業しまくりのサラリーマンプログラマです😇</p>
@@ -35,7 +35,7 @@ export default function About() {
           <li>typescript</li>
           <li>react / next.js</li>
           <li>electron</li>
-          <li>Node.js</li>
+          <li>node.js</li>
           <li>express</li>
         </ul>
         <h2>メディア</h2>

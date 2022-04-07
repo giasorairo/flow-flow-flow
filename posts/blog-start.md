@@ -3,7 +3,7 @@ title: '[雑記] ブログつくった'
 date: '2021/9/21'
 excerpt: 'このブログは Next.js x Firebase で作った。SSGして、Firebase Hosting にデプロイするだけのかんたんなお仕事だ。最近、はてなブログを書き始めたけど'
 cover_image: '/images/icon/icon.png'
-category: '雑記'
+category: 'diary'
 ---
 
 ## ブログつくった
