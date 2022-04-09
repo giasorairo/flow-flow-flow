@@ -2,6 +2,11 @@
 
 .post {
   margin: 3rem 0;
+
+  .bottom_ads {
+    display: flex;
+    justify-content: space-around;
+  }
 }
 
 .title {
