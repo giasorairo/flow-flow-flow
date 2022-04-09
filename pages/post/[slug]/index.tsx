@@ -13,6 +13,7 @@ import React, { useCallback, useEffect } from 'react';
 import { ShareButtons } from '../../../components/share-buttons';
 import { CategoryTag } from '../../../components/category-tag';
 import Link from 'next/link';
+import { Adsense } from '../../../components/adsense/adsense';
 
 type PostPageProps = {
   frontmatter: FrontMatterType,
@@ -55,6 +56,7 @@ export default function PostPage(props: PostPageProps) {
           <header>
             <h1 className={styles.title}>{frontmatter.title}</h1>
           </header>
+          <div className={styles['adsense']}><Adsense /></div>
           <p>{frontmatter.date}</p>
           <p>
             {frontmatter.category.split(',').map((v, i) => (
@@ -81,6 +83,7 @@ export default function PostPage(props: PostPageProps) {
         <div className={styles.shareButtonsWrapper}>
           <ShareButtons slug={slug} frontmatter={frontmatter} />
         </div>
+        <div className={styles['adsense']}><Adsense /></div>
         <Link href="/"><a><Button label="< back" onClick={() => {}} /></a></Link>
       </>
     </Layout>
