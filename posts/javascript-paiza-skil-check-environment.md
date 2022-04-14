@@ -1,5 +1,5 @@
 ---
-title: '[JS] VSCode x JavaScript(es8) 環境で paiza のスキルチェックのコーディングをしたいのでいろいろ設定した'
+title: '[JS] VSCode x JavaScript(es6) 環境で paiza のスキルチェックのコーディングをしたいのでいろいろ設定した'
 date: '2022/3/19'
 excerpt: ''
 cover_image: ''
