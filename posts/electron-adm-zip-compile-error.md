@@ -1,5 +1,5 @@
 ---
-title: 'electorn] electron のプロジェクトで adm-zip を インスタンス化したら、ビルドしたアプリでエラー吐いた'
+title: '[electron] electron のプロジェクトで adm-zip を インスタンス化したら、ビルドしたアプリでエラー吐いた'
 date: '2022/4/21'
 excerpt: ''
 cover_image: ''
@@ -19,7 +19,7 @@ const zpi = new AmdZip();
 
 ビルドするためにコンパイルしたらこうなった。
 
-defatult() ッテナンデスカ。ドコカラキンタンデスカ。
+default() ッテナンデスカ。ドコカラキンタンデスカ。
 
 ```jsx
 const adm_zip_1 = require("adm-zip");
@@ -28,7 +28,7 @@ const zip = new adm_zip_1.default();
 
 これでエラーが起きる。
 
-力技で、コンパイル後のファイルの `amd_zip_1.default()` のdefatul をすべて消したらうまくいったので、どうやら defautl という謎のメソッドが生えてしまっているのが原因らしい。
+力技で、コンパイル後のファイルの `amd_zip_1.default()` の default を消したらうまくいったので、どうやら default という謎のメソッドが生えてしまっているのが原因らしい。
 
 tsconfig.json の設定で消せるだろうなと思っていろいろ調べてみたけど、どれもだめだった。
 
