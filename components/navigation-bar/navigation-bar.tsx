@@ -13,6 +13,7 @@ export const NavigationBar = () => {
         <ul>
           <li><Link href="/category/javascript"><a>javascript</a></Link></li>
           <li><Link href="/category/react">react</Link></li>
+          <li><Link href="/category/electron">electron</Link></li>
           <li><Link href="/category/node.js">node.js</Link></li>
           <li><Link href="/category/express">express</Link></li>
           <li><Link href="/category/firebase">firebase</Link></li>
