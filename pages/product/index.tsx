@@ -26,7 +26,7 @@ export default function Product() {
         <h3>link</h3>
         <p><a href="https://chrome.google.com/webstore/detail/youtube-thumbnails-getter/ghhbhfmihfneeonmbchmkfpdcnmolfgo">youtube thumbnails getter</a></p>
         <h3>code</h3>
-        <p><a href="https://github.com/giasorairo/your-underline-functions">github</a></p>
+        <p><a href="https://github.com/giasorairo/youtube-thumbnails-getter">github</a></p>
       </div>
     </Layout>
   )
