@@ -29,6 +29,10 @@ if (fs.existsSync(path)) {
 
 fs.accessSync というメソッドを使用する
 
+なんかディレクトリが存在しない場合と、アクセス権限がない場合を `try {} catch() {}` で書かないといけないのがすごい違和感ある。
+できれば boolean で返してほしい。
+
+
 ```tsx
 try {
   fs.accessSync(path);
