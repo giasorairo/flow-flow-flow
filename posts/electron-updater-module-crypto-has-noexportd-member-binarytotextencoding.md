@@ -8,7 +8,7 @@ category: 'electron'
 
 ## electron の自動アップデート対応 をしようとして electron-updater を import すると `node_modules/electron-updater/node_modules/builder-util-runtime/out/httpExecutor.d.ts(2,10): error TS2305: Module '"crypto"' has no exported member 'BinaryToTextEncoding` というエラーが発生したので回避方法を調査する
 
-## electron-builder にある isuue
+## electron-builder にある issue
 
 electron-builder のリポジトリにそれっぽい issue がある。どうやら compile 時に slipLibCheck というオプションを設定してやるのがいちばんお手軽っぽい。
 
