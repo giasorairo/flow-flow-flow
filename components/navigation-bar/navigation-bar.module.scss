@@ -13,6 +13,11 @@
     width: 80%;
     height: 80%;
     margin-bottom: 2rem;
+
+    @media screen and (max-width: 1200px) {
+      display: none;
+    }
+
   }
 
   >ul {
