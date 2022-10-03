@@ -3,7 +3,9 @@ title: '[firebase] PC環境移行して firebase にデプロイしようとし�
 date: '2022/3/4'
 excerpt: ''
 cover_image: ''
-category: 'firebase'
+category: 'プログラミング'
+tags: 'firebase'
+keywords: 'firebase'
 ---
 
 先日 M1 mac に環境を移行しました🎉

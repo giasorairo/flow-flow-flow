@@ -3,7 +3,9 @@ title: '[electron] error TS2305: Module crypto has no exported member BinaryToTe
 date: '2022/5/16'
 excerpt: ''
 cover_image: ''
-category: 'electron'
+category: 'プログラミング'
+tags: 'electron'
+keywords: 'electron'
 ---
 
 ## electron の自動アップデート対応 をしようとして electron-updater を import すると `node_modules/electron-updater/node_modules/builder-util-runtime/out/httpExecutor.d.ts(2,10): error TS2305: Module '"crypto"' has no exported member 'BinaryToTextEncoding` というエラーが発生したので回避方法を調査する

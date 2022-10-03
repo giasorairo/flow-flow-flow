@@ -3,7 +3,9 @@ title: '[electron] showMessageBox でダイアログの close ボタンを押下
 date: '2022/5/27'
 excerpt: ''
 cover_image: ''
-category: 'electron'
+category: 'プログラミング'
+tags: 'electron'
+keywords: 'electron,net::ERR_CERT_DATE_INVALID'
 ---
 
 ## はじめに

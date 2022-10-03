@@ -3,7 +3,9 @@ title: '[ubuntu] conoha vpn に basic 認証つきのプロキシサーバを立
 date: '2022/4/20'
 excerpt: ''
 # cover_image: '/images/collection/css.png'
-category: 'linux'
+category: 'プログラミング'
+tags: 'linux'
+keywords: 'linux,ubuntu,proxyサーバ,basic認証'
 ---
 
 仕事で toB 向けの electron アプリをリリースしたのですが、とある企業が認証プロキシを使用しているらしく、アプリがネットワークエラーになるという報告があがってきました。electron のドキュメントを読むと、プロキシサーバに認証情報を送るのは、app.on(’login’) というのを使えば実装できそうであるということはすぐにわかりました。

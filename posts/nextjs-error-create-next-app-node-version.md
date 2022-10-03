@@ -3,7 +3,9 @@ title: '[next.js] error eslint-scope@7.1.1: The engine "node" is incompatible wi
 date: '2022/6/4'
 excerpt: ''
 cover_image: ''
-category: 'next.js'
+category: 'プログラミング'
+tags: 'next.js'
+keywords: 'next.js'
 ---
 
 ## `npx create-next-app --typescript` を実行したら error eslint-scope@7.1.1: The engine "node" is incompatible with this module. Expected version "^12.22.0 || ^14.17.0 || >=16.0.0". Got "14.4.0" というエラーがでた

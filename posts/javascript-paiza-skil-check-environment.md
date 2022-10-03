@@ -3,7 +3,9 @@ title: '[JS] VSCode x JavaScript(es6) 環境で paiza のスキルチェック�
 date: '2022/3/19'
 excerpt: ''
 cover_image: ''
-category: 'javascript'
+category: 'プログラミング'
+tags: 'javascript'
+keywords: 'javascript'
 ---
 
 ## やりたいこと

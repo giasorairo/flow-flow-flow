@@ -3,7 +3,9 @@ title: '[electron] electron のプロジェクトで adm-zip を インスタン
 date: '2022/4/21'
 excerpt: ''
 cover_image: ''
-category: 'electron'
+category: 'プログラミング'
+tags: 'electron'
+keywords: 'electron,amd-zip'
 ---
 
 electron のプロジェクトで、ファイル操作系のクラスを ts で書いていたら amd-zip のインスタンス化で詰まった。

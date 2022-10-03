@@ -3,7 +3,9 @@ title: 'localstorage に boolean 型の true を保存したら string 型で保
 date: '2022/6/8'
 excerpt: ''
 cover_image: ''
-category: 'javascript'
+category: 'プログラミング'
+tags: 'javascript'
+keywords: 'javascript,localstorage'
 ---
 
 ## ## 文字列の boolean だけは許さない

@@ -3,7 +3,9 @@ title: '[ssh] sshでサーバにアクセスするのに必要なもの'
 date: '2021/11/3'
 excerpt: '自分はフロントエンドエンジニアなので ssh することなく生きてきた。ssh の理解度は「なんかサーバにアクセスするときにつかうやつ」くらい。(やばい)'
 # cover_image: '/images/collection/css.png'
-category: 'other'
+category: 'プログラミング'
+tags: 'others'
+keywords: 'ssh'
 ---
 
 自分はプログラマになって3年目なのだけれど、フロントエンドエンジニアということもあり ssh することなく生きてきた。ssh の理解度は「なんかサーバにアクセスするときにつかうやつ」くらい。(やばい)
