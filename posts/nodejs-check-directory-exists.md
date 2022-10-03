@@ -3,7 +3,9 @@ title: '[node.js] ディレクトリが存在しているかどうか、ディ�
 date: '2022/5/8'
 excerpt: ''
 cover_image: ''
-category: 'node.js'
+category: 'プログラミング'
+tags: 'node.js'
+keywords: 'node.js'
 ---
 
 ## 要件

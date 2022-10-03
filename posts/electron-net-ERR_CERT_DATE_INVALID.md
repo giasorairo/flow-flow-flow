@@ -3,7 +3,9 @@ title: '[electron] electron アプリで net::ERR_CERT_DATE_INVALID を無視し
 date: '2022/7/22'
 excerpt: ''
 cover_image: ''
-category: 'electron'
+category: 'プログラミング'
+tags: 'electron'
+keywords: 'electron,net::ERR_CERT_DATE_INVALID'
 ---
 
 ## 経緯

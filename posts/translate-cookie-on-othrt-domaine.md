@@ -3,7 +3,9 @@ title: '[cookie] 開発中にlocalhostと別ドメインのAPIサーバ間のcoo
 date: '2021/11/18'
 excerpt: 'やりたいこと: APIとクライアントアプリを別のプロジェクトとして開発しているとき、クライアントアプリをlocalhostで起動させて、APIのテストサーバと通信させる。'
 # cover_image: '/images/collection/css.png'
-category: 'react'
+category: 'プログラミング'
+tags: 'react'
+keywords: 'react,cookie,proxy'
 ---
 
 ## やりたいこと

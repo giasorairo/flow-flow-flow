@@ -3,7 +3,9 @@ title: 'base64 に変換したcanvas をサーバ側で受け取ってファイ�
 date: '2022/3/7'
 excerpt: ''
 cover_image: ''
-category: 'javascript'
+category: 'プログラミング'
+tags: 'javascript'
+keywords: 'javascript'
 ---
 
 ogp 画像を動的に生成したくてタイトルのような処理が必要になった。

@@ -3,7 +3,9 @@ title: '[PlantUML] vscode で PlantUML 環境セットアップ'
 date: '2022/5/3'
 excerpt: ''
 cover_image: ''
-category: 'tool'
+category: 'プログラミング'
+tags: 'others'
+keywords: 'PlantUML'
 ---
 
 早速やっていく💪

@@ -3,7 +3,9 @@ title: '[JavaScript] CSRF対策でレスポンスヘッダからtokenを取得�
 date: '2021/9/22'
 excerpt: '今回やりたいのは、CSRF対策でレスポンスヘッダからtokenを取得して、fetchでのリクエストのヘッダに持たせるという処理。これは、'
 cover_image: '/images/collection/javascript3.png'
-category: 'javascript'
+category: 'プログラミング'
+tags: 'javascript'
+keywords: 'javascript'
 ---
 
 ## もくじ

@@ -3,7 +3,9 @@ title: '[JS] JavaScript でアルゴリズム入門したので成長記録を�
 date: '2022/3/18'
 excerpt: ''
 cover_image: ''
-category: 'javascript'
+category: 'プログラミング'
+tags: 'javascript'
+keywords: 'javascript'
 ---
 ## 前書き
 
