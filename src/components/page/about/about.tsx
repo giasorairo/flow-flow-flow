@@ -1,4 +1,5 @@
 import { Center, Heading, ListItem, UnorderedList } from '@chakra-ui/react';
+import { NextChakraLink } from '../../ui/next-chakra-link/next-chakra-link';
 
 const About = () => {
   return (
@@ -23,8 +24,30 @@ const About = () => {
 
       <Heading as={'h3'} fontSize={'1.5rem'} my={3} borderBottom={'1px solid pink'} pb={1}>media</Heading>
       <UnorderedList listStylePos={'inside'}>
-        <ListItem><a href="https://mobile.twitter.com/gia_sorairo">twitter</a></ListItem>
-        <ListItem><a href="https://zenn.dev/gia">zenn</a></ListItem>
+        <ListItem>
+          <NextChakraLink
+            label={'twitter'}
+            linkParam={{
+              href: 'https://mobile.twitter.com/gia_sorairo',
+            }}
+          />
+        </ListItem>
+        <ListItem>
+          <NextChakraLink
+            label={'zenn'}
+            linkParam={{
+              href: 'https://zenn.dev/gia',
+            }}
+          />
+        </ListItem>
+        <ListItem>
+          <NextChakraLink
+            label={'qiita'}
+            linkParam={{
+              href: 'https://qiita.com/gia_sorairo',
+            }}
+          />
+        </ListItem>
       </UnorderedList>
     </Center>
   );
