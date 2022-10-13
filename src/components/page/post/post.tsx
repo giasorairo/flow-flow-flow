@@ -15,7 +15,7 @@ export const Post = (props: PostProps) => {
     <Box>
 
       {/* category */}
-      <Box>
+      {/* <Box>
         <Heading as={'h2'} fontWeight={'medium'} color={'gray.600'} fontSize={'1.1rem'}>category</Heading>
         <Box p={1} />
         <Flex gap={2} flexWrap={'wrap'}>
@@ -36,12 +36,12 @@ export const Post = (props: PostProps) => {
             </NextLink>
           ))}
         </Flex>
-      </Box>
+      </Box> */}
 
-      <Box p={2} />
+      {/* <Box p={2} /> */}
 
       {/* tag */}
-      <Box>
+      {/* <Box>
         <Heading as={'h2'} fontWeight={'medium'} color={'gray.600'} fontSize={'1.1rem'}>tag</Heading>
         <Box p={1} />
         <Flex gap={2} flexWrap={'wrap'}>
@@ -63,7 +63,7 @@ export const Post = (props: PostProps) => {
             </NextLink>
           ))}
         </Flex>
-      </Box>
+      </Box> */}
       <Box p={4} />
       
       <Box as={'section'}>

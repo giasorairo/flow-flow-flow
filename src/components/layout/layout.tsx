@@ -33,7 +33,7 @@ export default function Layout(props: { children: JSX.Element }) {
         <meta name="twitter:image" key="twitterImage" content={`${process.env.NEXT_PUBLIC_URL}/images/icon/icon.png`} />
       </Head>
       <Box minH='100vh' color={useColorModeValue('gray.600', 'gray.200')}>
-        <NavigationBar />
+        {/* <NavigationBar /> */}
         <Center marginTop={{ base: 2, md: 6 }} marginBottom={{ base: '100px', md: '30px' }} zIndex={0}>
           <Box maxW={'920px'} px={'10px'} overflow={'auto'}>
             {children}
