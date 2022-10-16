@@ -34,6 +34,7 @@ $chakra_gray900: #171923;
 
 @mixin paragraph {
   color: $font_color;
+  margin: 8px;
 }
 
 @mixin heading_base {

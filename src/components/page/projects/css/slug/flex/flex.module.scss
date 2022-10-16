@@ -39,6 +39,7 @@
 
   .sandbox-2 {
     @include container;
+    overflow: auto;
 
     .flex_container {
       display: flex;
@@ -73,6 +74,99 @@
         flex-shrink: 1;
       }
 
+    }
+  }
+
+  .sandbox-3 {
+    @include container;
+    overflow: auto;
+
+    .flex_container {
+      display: flex;
+
+      >div {
+        margin: 8px;
+        padding: 8px;
+      }
+
+      .flex_item-1 {
+        background-color: lightblue;
+        flex-basis: 50px;
+      }
+
+      .flex_item-2 {
+        background-color: lightpink;
+        flex-basis: 100px;
+      }
+
+      .flex_item-3 {
+        background-color: lightsalmon;
+        flex-basis: 200px;
+      }
+    }
+  }
+
+  .sandbox-4 {
+    @include container;
+    overflow: auto;
+
+    .flex_container_row {
+      display: flex;
+      height: 200px;
+
+      >div {
+        margin: 8px;
+        padding: 8px;
+      }
+
+      .flex_item-1 {
+        background-color: lightblue;
+        height: 50px;
+        align-self: center;
+      }
+
+      .flex_item-2 {
+        background-color: lightpink;
+        height: 50px;
+        align-self: start;
+      }
+
+      .flex_item-3 {
+        background-color: lightsalmon;
+        height: 50px;
+        align-self: end;
+      }
+
+    }
+  }
+
+  .sandbox-5 {
+    @include container;
+    overflow: auto;
+
+    .flex_container_column {
+      display: flex;
+      flex-direction: column;
+
+      >div {
+        margin: 8px;
+        padding: 8px;
+      }
+
+      .flex_item-1 {
+        background-color: lightblue;
+        align-self: center;
+      }
+
+      .flex_item-2 {
+        background-color: lightpink;
+        align-self: start;
+      }
+
+      .flex_item-3 {
+        background-color: lightsalmon;
+        align-self: end;
+      }
     }
   }
   
@@ -120,5 +214,15 @@
         content: 'quotation: ';
       }
     }
+  }
+
+  ul {
+    color: $font_color;
+    margin: 12px 0;
+    list-style: disc inside;
+  }
+
+  .text_center {
+    text-align: center;
   }
 }
