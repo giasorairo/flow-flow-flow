@@ -50,7 +50,7 @@ export const Flex = () => {
       <h3>flex-grow</h3>
       <p><a href="https://developer.mozilla.org/ja/docs/Web/CSS/flex">mdn - flex-grow</a></p>
       <q>
-        flex-grow は CSS のプロパティで、フレックスアイテムの主軸方向の寸法のフレックス身長係数を設定します。
+        flex-grow は CSS のプロパティで、フレックスアイテムの主軸方向の寸法のフレックス<code>伸長係数</code>を設定します。
         <div className={styles['quotation_from']}>
           <a href="https://developer.mozilla.org/ja/docs/Web/CSS/flex">mdn - flex-grow</a>
         </div>
@@ -82,8 +82,43 @@ export const Flex = () => {
         <code>flex-grow</code>のデフォルト値は 0 というのも体感した。
       </p>
 
-      <h2>flex-shrink</h2>
-      明日やる。
+      <h3>flex-shrink</h3>
+      <p><a href="https://developer.mozilla.org/ja/docs/Web/CSS/flex-shrink">mdn - flex-shrink</a></p>
+      <q>
+        <code>flex-shrink</code> は CSS のプロパティで、フレックスアイテムの <code>縮小係数</code>を設定します。
+        すべてのフレックスアイテムの寸法がフレックスコンテナよりも大きい場合、アイテムは<code>flex-shrink</code>の数値にしたがって縮小して収まります。
+        <br />
+        使用時は<code>flex-shrink</code>は<code>flex-grow</code>や<code>flex-basis</code>などの他のフレックスプロパティとともに使用され、
+        ふつうは<code>flex</code>の一括指定を使用して定義されます。
+        <div className={styles['quotation_from']}>
+          <a href="https://developer.mozilla.org/ja/docs/Web/CSS/flex-shrink">mdn - flex-shrink</a>
+        </div>
+      </q>
+      <p>
+        <code>flex-grow</code> が<code>伸長係数</code>を設定するのに対して、<code>flex-shrink</code> は<code>縮小係数</code>を設定する。なるほど。
+      </p>
+
+      <div className={styles['sandbox-2']}>
+        <div className={styles['flex_container']}>
+          <div className={styles['item-1']}>flex-shrink: 2</div>
+          <div className={styles['item-2']}>flex-shrink: 2</div>
+          <div className={styles['item-3']}>flex-shrink: 1</div>
+          <div className={styles['item-4']}>flex-shrink: 1</div>
+          <div className={styles['item-5']}>flex-shrink: 1</div>
+        </div>
+      </div>
+
+      <p>
+        背景がオレンジっぽいところが width: 500px の flex コンテナで、
+        そのなかの item を flex-basis: 120px にして、item がコンテナに収まらないようにしている。(flex-basis は flex-shrink の次に勉強する)
+      </p>
+      <p>
+        おー。<code>flex-shrink: 2</code>にしている item が、<code>flex-shrink: 1</code>にしている item より縮小している。
+        ちなみに<code>flex-shrink: 1</code>を記述を消してもレイアウトは変わらなかったので<code>flex-shrink</code> の default value が 1 だというのも体感した。
+      </p>
+
+      <h3>flex-basis</h3>
+      <p><a href="https://developer.mozilla.org/ja/docs/Web/CSS/flex-basis">mdn - flex-basis</a></p>
     </div>
   );
 };

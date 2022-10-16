@@ -36,6 +36,45 @@
       }
     }
   }
+
+  .sandbox-2 {
+    @include container;
+
+    .flex_container {
+      display: flex;
+      width: 500px;
+      background-color: lightsalmon;
+
+      >div {
+        flex-basis: 120px;
+        margin: 8px;
+        padding: 8px;
+        text-align: center;
+      }
+  
+      .item-1 {
+        background-color: lightblue;
+        flex-shrink: 2;
+      }
+      .item-2 {
+        background-color: lightcoral;
+        flex-shrink: 2;
+      }
+      .item-3 {
+        background-color: lightgoldenrodyellow;
+        flex-shrink: 1;
+      }
+      .item-4 {
+        background-color: lightgray;
+        flex-shrink: 1;
+      }
+      .item-5 {
+        background-color: lightgreen;
+        flex-shrink: 1;
+      }
+
+    }
+  }
   
   p {
     @include paragraph;
