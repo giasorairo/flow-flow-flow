@@ -1,0 +1,228 @@
+@import '../../css-detail.page.module.scss';
+
+.flex_page {
+  margin: 0 auto;
+  max-width: 600px;
+  padding: 0 8px;
+  margin-bottom: 40px;
+
+  @mixin container {
+    margin: 12px 0;
+    border: 1px solid $chakra_pink400;
+    box-sizing: border-box;
+  }
+
+  .sandbox-1 {
+    @include container;
+
+    .flex_container {
+      display: flex;
+      justify-content: space-around;
+
+      >div {
+        margin: 8px;
+        padding: 8px;
+      }
+
+      .item-1 {
+        background-color: lightpink;
+        flex: 1;
+      }
+      .item-2 {
+        background-color: lightblue;
+      }
+      .item-3 {
+        background-color: lightgreen;
+      }
+    }
+  }
+
+  .sandbox-2 {
+    @include container;
+    overflow: auto;
+
+    .flex_container {
+      display: flex;
+      width: 500px;
+      background-color: lightsalmon;
+
+      >div {
+        flex-basis: 120px;
+        margin: 8px;
+        padding: 8px;
+        text-align: center;
+      }
+  
+      .item-1 {
+        background-color: lightblue;
+        flex-shrink: 2;
+      }
+      .item-2 {
+        background-color: lightcoral;
+        flex-shrink: 2;
+      }
+      .item-3 {
+        background-color: lightgoldenrodyellow;
+        flex-shrink: 1;
+      }
+      .item-4 {
+        background-color: lightgray;
+        flex-shrink: 1;
+      }
+      .item-5 {
+        background-color: lightgreen;
+        flex-shrink: 1;
+      }
+
+    }
+  }
+
+  .sandbox-3 {
+    @include container;
+    overflow: auto;
+
+    .flex_container {
+      display: flex;
+
+      >div {
+        margin: 8px;
+        padding: 8px;
+      }
+
+      .flex_item-1 {
+        background-color: lightblue;
+        flex-basis: 50px;
+      }
+
+      .flex_item-2 {
+        background-color: lightpink;
+        flex-basis: 100px;
+      }
+
+      .flex_item-3 {
+        background-color: lightsalmon;
+        flex-basis: 200px;
+      }
+    }
+  }
+
+  .sandbox-4 {
+    @include container;
+    overflow: auto;
+
+    .flex_container_row {
+      display: flex;
+      height: 200px;
+
+      >div {
+        margin: 8px;
+        padding: 8px;
+      }
+
+      .flex_item-1 {
+        background-color: lightblue;
+        height: 50px;
+        align-self: center;
+      }
+
+      .flex_item-2 {
+        background-color: lightpink;
+        height: 50px;
+        align-self: start;
+      }
+
+      .flex_item-3 {
+        background-color: lightsalmon;
+        height: 50px;
+        align-self: end;
+      }
+
+    }
+  }
+
+  .sandbox-5 {
+    @include container;
+    overflow: auto;
+
+    .flex_container_column {
+      display: flex;
+      flex-direction: column;
+
+      >div {
+        margin: 8px;
+        padding: 8px;
+      }
+
+      .flex_item-1 {
+        background-color: lightblue;
+        align-self: center;
+      }
+
+      .flex_item-2 {
+        background-color: lightpink;
+        align-self: start;
+      }
+
+      .flex_item-3 {
+        background-color: lightsalmon;
+        align-self: end;
+      }
+    }
+  }
+  
+  p {
+    @include paragraph;
+  }
+
+  h2 {
+    @include heading2;
+  }
+
+  h3 {
+    @include heading3;
+  }
+  
+  a {
+    @include anchor_pink;
+  }
+
+  code {
+    @include code;
+  }
+
+  q {
+    // padding: 10px;
+    display: block;
+    margin: 8px 0;
+    padding: 10px;
+    border-radius: $font_color;
+    // background-color: $chakra_pink100;
+    box-sizing: border-box;
+    border: 4px dotted $chakra_pink100;
+
+    &::before {
+      content: '';
+    }
+
+    .quotation_from {
+      display: block;
+      font-size: 0.8rem;
+      color: $chakra_gray500;
+      text-align: right;
+
+      &::before {
+        content: 'quotation: ';
+      }
+    }
+  }
+
+  ul {
+    color: $font_color;
+    margin: 12px 0;
+    list-style: disc inside;
+  }
+
+  .text_center {
+    text-align: center;
+  }
+}

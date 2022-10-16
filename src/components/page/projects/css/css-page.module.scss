@@ -1,0 +1,32 @@
+.css_page {
+
+  .title_container {
+    width: 100%;
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    padding: 0 10px;
+  }
+
+  .page_list_container {
+    width: 100%;
+    padding: 0 10px;
+
+    ul {
+      width: max-content;
+      margin: 0 auto;
+      list-style-position: inside;
+
+      li {
+        a {
+          color: #D53F8C;
+          &:hover {
+            color: #FBB6CE;
+          }
+        }
+      }
+
+    }
+  }
+
+}
