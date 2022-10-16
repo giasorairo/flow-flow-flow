@@ -1,6 +1,6 @@
 import * as fs from 'fs';
 import path from 'path';
-import { CssDetailPage } from '../../../components/page/coding/css/css-detail.page';
+import { CssDetailPage } from '../../../components/page/projects/css/css-detail.page';
 
 type Props = {
   slug: string,
@@ -12,7 +12,7 @@ const CssDetail = (props: Props) => {
 }
 
 export async function getStaticPaths() {
-  const directories = fs.readdirSync(path.join('src', 'components', 'page', 'coding', 'css', 'slug'));
+  const directories = fs.readdirSync(path.join('src', 'components', 'page', 'projects', 'css', 'slug'));
   const paths = directories
     .map((directoryName) => ({
     params: {

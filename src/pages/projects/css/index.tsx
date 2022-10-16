@@ -1,4 +1,4 @@
-import { CssPage } from '../../../components/page/coding/css/css-page';
+import { CssPage } from '../../../components/page/projects/css/css-page';
 
 const Css = () => {
   return (
