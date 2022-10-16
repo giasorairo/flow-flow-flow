@@ -1,0 +1,73 @@
+.css_detail_page {
+
+  .title_container {
+    width: 100%;
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    padding: 0 10px;
+  }
+
+}
+
+$font_color: #4A5568;
+
+$chakra_pink100: #FED7E2;
+$chakra_pink200: #FBB6CE;
+$chakra_pink300: #F687B3;
+$chakra_pink400: #ED64A6;
+$chakra_pink500: #D53F8C;
+$chakra_pink600: #B83280;
+$chakra_pink700: #97266D;
+$chakra_pink800: #702459;
+$chakra_pink900: #521B41;
+
+$chakra_gray100: #EDF2F7;
+$chakra_gray200: #E2E8F0;
+$chakra_gray300: #CBD5E0;
+$chakra_gray400: #A0AEC0;
+$chakra_gray500: #718096;
+$chakra_gray600: #4A5568;
+$chakra_gray700: #2D3748;
+$chakra_gray800: #1A202C;
+$chakra_gray900: #171923;
+
+@mixin paragraph {
+  color: $font_color;
+}
+
+@mixin heading_base {
+  color: $font_color;
+}
+
+@mixin heading2 {
+  @include heading_base;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 16px 0;
+  text-decoration: $chakra_pink400 underline 4px;
+  // underline が g とかの文字で途切れるのを防ぐ
+  text-decoration-skip-ink: none;
+}
+
+@mixin heading3 {
+  @include heading_base;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 12px 0;
+  text-decoration: $chakra_pink200 underline 2px;
+  text-decoration-skip-ink: none;
+}
+
+@mixin anchor_pink {
+  color: #D53F8C;
+  &:hover {
+    color: #FBB6CE;
+  }
+}
+
+@mixin code {
+  background-color: #feebf0;
+  display: inline-block;
+  padding: 0 4px;
+}

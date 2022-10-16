@@ -1,0 +1,85 @@
+@import '../../css-detail.page.module.scss';
+
+.flex_page {
+  margin: 0 auto;
+  max-width: 600px;
+  padding: 0 8px;
+  margin-bottom: 40px;
+
+  @mixin container {
+    margin: 12px 0;
+    border: 1px solid $chakra_pink400;
+    box-sizing: border-box;
+  }
+
+  .sandbox-1 {
+    @include container;
+
+    .flex_container {
+      display: flex;
+      justify-content: space-around;
+
+      >div {
+        margin: 8px;
+        padding: 8px;
+      }
+
+      .item-1 {
+        background-color: lightpink;
+        flex: 1;
+      }
+      .item-2 {
+        background-color: lightblue;
+      }
+      .item-3 {
+        background-color: lightgreen;
+      }
+    }
+  }
+  
+  p {
+    @include paragraph;
+  }
+
+  h2 {
+    @include heading2;
+  }
+
+  h3 {
+    @include heading3;
+  }
+  
+  a {
+    @include anchor_pink;
+  }
+
+  code {
+    @include code;
+  }
+
+  q {
+    // padding: 10px;
+    display: block;
+    margin: 8px 0;
+    padding: 10px;
+    border-radius: $font_color;
+    // background-color: $chakra_pink100;
+    box-sizing: border-box;
+    border: 4px dotted $chakra_pink100;
+
+    &::before {
+      content: '';
+    }
+
+    .quotation_from {
+      display: block;
+      font-size: 0.8rem;
+      color: $chakra_gray500;
+      text-align: right;
+
+      &::before {
+        content: 'quotation: ';
+      }
+    }
+  }
+}
