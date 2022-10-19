@@ -1,0 +1,70 @@
+@import '../../css-detail.page.module.scss';
+
+.memo_page {
+  margin: 0 auto;
+  max-width: 600px;
+  padding: 0 8px;
+  margin-bottom: 40px;
+
+  .sandbox-1 {
+    @include container;
+
+    .container {
+      height: 200px;
+      overflow-y: auto;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+
+      .bar {
+        height: 300px;
+        background-color: lightblue;
+      }
+
+      .fixed {
+        position: fixed;
+        height: 50px;
+        background-color: lightcyan;
+        top: auto;
+        margin-top: 150px;
+        width: 100%;
+      }
+    }
+
+  }
+
+
+  p {
+    @include paragraph;
+  }
+
+  h2 {
+    @include heading2;
+  }
+
+  h3 {
+    @include heading3;
+  }
+  
+  a {
+    @include anchor_pink;
+  }
+
+  code {
+    @include code;
+  }
+
+  q {
+    @include quotation;
+  }
+
+  ul {
+    color: $font_color;
+    margin: 12px 0;
+    list-style: disc inside;
+  }
+
+  .text_center {
+    text-align: center;
+  }
+}
