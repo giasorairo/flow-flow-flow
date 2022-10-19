@@ -6,12 +6,6 @@
   padding: 0 8px;
   margin-bottom: 40px;
 
-  @mixin container {
-    margin: 12px 0;
-    border: 1px solid $chakra_pink400;
-    box-sizing: border-box;
-  }
-
   .sandbox-1 {
     @include container;
 
@@ -191,29 +185,7 @@
   }
 
   q {
-    // padding: 10px;
-    display: block;
-    margin: 8px 0;
-    padding: 10px;
-    border-radius: $font_color;
-    // background-color: $chakra_pink100;
-    box-sizing: border-box;
-    border: 4px dotted $chakra_pink100;
-
-    &::before {
-      content: '';
-    }
-
-    .quotation_from {
-      display: block;
-      font-size: 0.8rem;
-      color: $chakra_gray500;
-      text-align: right;
-
-      &::before {
-        content: 'quotation: ';
-      }
-    }
+    @include quotation;
   }
 
   ul {

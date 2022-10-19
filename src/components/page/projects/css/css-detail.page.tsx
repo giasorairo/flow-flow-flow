@@ -1,10 +1,18 @@
 import { Flex } from './slug/flex/flex';
+import { Grid } from './slug/grid/grid';
 import styles from './css-detail.page.module.scss';
+import { Memo } from './slug/memo/memo';
 
 const getComponent = (slug: string) => {
   switch (slug) {
     case 'flex': {
       return (<Flex />)
+    }
+    case 'grid': {
+      return <Grid />
+    }
+    case 'memo': {
+      return <Memo />
     }
     default: {
       return <>not found !!</>

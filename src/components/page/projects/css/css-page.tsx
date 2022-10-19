@@ -1,12 +1,11 @@
 import styles from './css-page.module.scss';
 import NextLink from 'next/link';
-import { Spacer } from '../../../ui/spaser/spacer';
 
 
-const createCssPageLink = (slug: string) => `${process.env.NEXT_PUBLIC_URL}/coding/css/${slug}`;
+const createCssPageLink = (slug: string) => `${process.env.NEXT_PUBLIC_URL}/projects/css/${slug}`;
 const PAGE_LIST: { label: string, url: string }[] = [
   { label: 'flex', url: createCssPageLink('flex') },
-  { label: 'ダミーデータ', url: createCssPageLink('flex') },
+  { label: 'grid', url: createCssPageLink('grid') },
   { label: 'ダミーデータ', url: createCssPageLink('flex') },
   { label: 'ダミーデータ', url: createCssPageLink('flex') },
   { label: 'ダミーデータ', url: createCssPageLink('flex') },

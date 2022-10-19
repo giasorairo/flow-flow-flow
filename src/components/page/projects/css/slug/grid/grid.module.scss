@@ -1,0 +1,149 @@
+@import '../../css-detail.page.module.scss';
+
+.grid_page {
+  margin: 0 auto;
+  max-width: 600px;
+  padding: 0 8px;
+  margin-bottom: 40px;
+
+  .video_container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 56.25%;
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .sandbox-1 {
+    @include container;
+    height: 400px;
+
+    .grid_container {
+      height: 100%;
+      display: grid;
+      gap: 1em;
+      grid-template-rows: auto auto 1fr auto;
+
+      @media (min-width: 400px) {
+        grid-template-columns: 6em 1fr;
+        grid-template-rows: auto 1fr;
+      }
+    }
+
+    .header {
+      background-color: lightblue;
+      font-size: 1.3rem;
+      padding: 12px;
+
+      @media (min-width: 400px) {
+        grid-column: span 2;
+      }
+    }
+
+    .nav {
+      background-color: lightcoral;
+
+      @media (min-width: 400px) {
+        grid-row: span 2;
+      }
+    }
+
+    .main {
+      background-color: lightpink
+    }
+
+    .footer {
+      background-color: lightgoldenrodyellow;
+    }
+  }
+
+  .sandbox-2 {
+    @include container;
+    height: 400px;
+
+    .grid_container {
+      height: 100%;
+      display: grid;
+      gap: 1em;
+      grid-template-areas:
+        'header'
+        'nav'
+        'main'
+        'footer'
+      ;
+
+      @media (min-width: 400px) {
+        grid-template-areas:
+          'header header'
+          'nav main'
+          'nav footer'
+        ;
+      }
+    }
+
+    .header {
+      background-color: lightblue;
+      font-size: 1.3rem;
+      padding: 12px;
+
+      grid-area: header;
+    }
+
+    .nav {
+      background-color: lightcoral;
+      grid-area: nav;
+    }
+
+    .main {
+      background-color: lightpink;
+      grid-area: main;
+    }
+
+    .footer {
+      background-color: lightgoldenrodyellow;
+      grid-area: footer;
+    }
+  }
+
+
+  p {
+    @include paragraph;
+  }
+
+  h2 {
+    @include heading2;
+  }
+
+  h3 {
+    @include heading3;
+  }
+  
+  a {
+    @include anchor_pink;
+  }
+
+  code {
+    @include code;
+  }
+
+  q {
+    @include quotation;
+  }
+
+  ul {
+    color: $font_color;
+    margin: 12px 0;
+    list-style: disc inside;
+  }
+
+  .text_center {
+    text-align: center;
+  }
+}
