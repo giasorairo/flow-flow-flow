@@ -1,4 +1,3 @@
-import { relative } from 'path';
 import { useCallback, useState } from 'react';
 import styles from './memo.module.scss';
 
