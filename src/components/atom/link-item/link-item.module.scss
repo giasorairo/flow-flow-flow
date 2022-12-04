@@ -1,0 +1,8 @@
+.link-item {
+  color: pink;
+
+  &:hover {
+    color: #B83280;
+    transition: 0.2s;
+  }
+}

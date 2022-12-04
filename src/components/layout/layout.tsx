@@ -1,6 +1,15 @@
 import Head from 'next/head';
-import { Box, useColorModeValue, Center } from '@chakra-ui/react';
-import { NavigationBar } from '../ui/navigation-bar/navigation-bar';
+import {
+  Box,
+  useColorModeValue,
+  Center,
+  UnorderedList,
+  ListItem,
+  Divider,
+  Flex,
+} from '@chakra-ui/react';
+import Link, { LinkProps } from 'next/link';
+import { LinkItem } from '../atom/link-item/link-item';
 
 export default function Layout(props: { children: JSX.Element }) {
   const { children } = props;
@@ -33,13 +42,69 @@ export default function Layout(props: { children: JSX.Element }) {
         <meta name="twitter:image" key="twitterImage" content={`${process.env.NEXT_PUBLIC_URL}/images/icon/icon.png`} />
       </Head>
       <Box minH='100vh' color={useColorModeValue('gray.600', 'gray.200')}>
-        {/* <NavigationBar /> */}
-        <Center marginTop={{ base: 2, md: 6 }} marginBottom={{ base: '100px', md: '30px' }} zIndex={0}>
-          <Box maxW={'920px'} px={'10px'} overflow={'auto'}>
-            {children}
-          </Box>
-        </Center>
+        {children}
+        <NavigationBar />
       </Box>
     </>
   );
-}
+};
+
+
+type NavigationItem = { label: string, path: string };
+
+const NavigationBar = () => {
+  const NAVIGATION_ITEMS: NavigationItem[] = [
+    { label: 'top', path: '/' },
+    { label: 'blog', path: '/post' },
+    { label: 'product', path: '/product' },
+    { label: 'about', path: '/about' },
+  ];
+  return (
+    <Box
+      position={'fixed'}
+      width={'full'}
+      display={'flex'}
+      justifyContent={'center'}
+      alignItems={'center'}
+      height={'40px'}
+      bottom={{ base: 0, md: undefined }}
+      borderBottom={{ base: undefined, md: 'solid 1px #ddd' }}
+      borderTop={{ base: 'solid 1px #ddd', md: undefined }}
+      top={{ base: undefined, md: 0 }}
+      backgroundColor="#fff"
+    >
+      <UnorderedList
+        display={'flex'}
+        listStyleType={'none'}
+        justifyContent={'space-around'}
+        width={'full'}
+        maxWidth={'300px'}
+        margin={0}
+      >
+        {NAVIGATION_ITEMS.map((item, itemIndex) => (
+          <>
+            <ListItem
+              css={{
+                a: {
+                  color: '#aaa !important',
+                  '&:hover': {
+                    color: 'pink !important',
+                  },
+                }
+              }}
+            >
+              <LinkItem
+                linkProps={{ href: item.path }}
+              >
+                {item.label}
+              </LinkItem>
+            </ListItem>
+            {itemIndex === NAVIGATION_ITEMS.length - 1
+              ? <></>
+              : <Box><Divider orientation='vertical' h={'full'} /></Box>}
+          </>
+        ))}
+      </UnorderedList>
+    </Box>
+  );
+};

@@ -33,7 +33,12 @@ const PRODUCTS = [
 export default function Product() {
   return (
     <Layout>
-      <Center px={2} flexDirection={'column'}>
+      <Center
+        marginTop={{ base: undefined, md: '40px' }}
+        marginBottom={{ base: '40px', md: undefined }}
+        paddingY={4}
+      >
+        <Box maxWidth={'620px'} paddingX={'10px'}>
           {PRODUCTS.map((product) => (
             <Flex key={product.name} flexDirection={'column'}>
               <Center>
@@ -78,6 +83,7 @@ export default function Product() {
               <Box pb={8}/>
             </Flex>
           ))}
+        </Box>
       </Center>
     </Layout>
   )

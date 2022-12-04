@@ -12,7 +12,11 @@ export const Post = (props: PostProps) => {
   const { posts, categories, tags } = props;
 
   return (
-    <Box>
+    <Box
+      marginTop={{ base: undefined, md: '40px' }}
+      marginBottom={{ base: '40px', md: undefined }}
+      paddingY={4}
+    >
 
       {/* category */}
       {/* <Box>
@@ -64,13 +68,12 @@ export const Post = (props: PostProps) => {
           ))}
         </Flex>
       </Box> */}
-      <Box p={4} />
       
-      <Box as={'section'}>
-        <Flex flexDirection={'column'} gap={10}>
+      <Flex as={'section'} justifyContent={'center'}>
+        <Flex flexDirection={'column'} gap={10} maxWidth={'620px'} paddingX={'10px'}>
           {posts.map((post) => (
-            <NextLink href={`/post/${post.slug}`} passHref>
-              <Box as={'a'} flexDirection={'column'}>
+            <NextLink href={`/post/${post.slug}`}>
+              <Box flexDirection={'column'}>
                 <Heading
                   as={'h2'}
                   fontSize={{ base: '1.1rem', md: '1.3rem'}}
@@ -90,7 +93,7 @@ export const Post = (props: PostProps) => {
             </NextLink>
           ))}
         </Flex>
-      </Box>
+      </Flex>
     </Box>
   );
 };
