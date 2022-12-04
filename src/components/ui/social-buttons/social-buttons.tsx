@@ -9,7 +9,7 @@ import {
   PocketIcon,
   PinterestShareButton,
   PinterestIcon
-} from 'react-share';
+} from 'next-share';
 
 type SocialButtonsPropsType = {
   /** 共有する url */

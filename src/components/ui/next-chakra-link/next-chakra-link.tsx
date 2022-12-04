@@ -6,7 +6,7 @@ export const NextChakraLink = (props: { label: string, linkParam: LinkProps }) =
   const { label, linkParam } = props;
   const linkHoverColor = useColorModeValue('pink.200', 'white');
   return (
-    <NextLink href={props.linkParam.href} passHref>
+    <NextLink href={props.linkParam.href}>
       <Link
         color={useColorModeValue('pink.300', 'pink')}
         _hover={{
