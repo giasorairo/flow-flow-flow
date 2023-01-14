@@ -72,7 +72,7 @@ export const Post = (props: PostProps) => {
       <Flex as={'section'} justifyContent={'center'}>
         <Flex flexDirection={'column'} gap={10} maxWidth={'620px'} paddingX={'10px'}>
           {posts.map((post) => (
-            <NextLink href={`/post/${post.slug}`}>
+            <NextLink key={post.slug} href={`/post/${post.slug}`}>
               <Box flexDirection={'column'}>
                 <Heading
                   as={'h2'}

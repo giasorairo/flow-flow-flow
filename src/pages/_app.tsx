@@ -10,7 +10,7 @@ const theme = extendTheme({
     heading: 'Noto Sans JP, sans-serif;',
     body: 'Noto Sans JP, sans-serif;',
   },
-})
+});
 
 function App(props: AppProps) {
   const { Component, pageProps } = props;
