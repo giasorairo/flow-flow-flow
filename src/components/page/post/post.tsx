@@ -1,4 +1,4 @@
-import { Box, Heading, Text, Flex, Link } from '@chakra-ui/react';
+import { Box, Heading, Text, Flex } from '@chakra-ui/react';
 import { PostType } from '../../../models';
 import NextLink from 'next/link';
 
@@ -9,7 +9,7 @@ type PostProps = {
 };
 
 export const Post = (props: PostProps) => {
-  const { posts, categories, tags } = props;
+  const { posts } = props;
 
   return (
     <Box

@@ -212,7 +212,7 @@ export const Flex = () => {
       <q>
         <p>
           フレックスボックスにおける交差軸(cross axis / クロス軸)は、主軸(main axis / メイン軸)で、
-          <code>flex-direction</code> が row または　<code>row-reverse</code> であるとき(つまり主軸が行方向であるとき)、列方向の軸のことです。
+          <code>flex-direction</code> が row または <code>row-reverse</code> であるとき(つまり主軸が行方向であるとき)、列方向の軸のことです。
         </p>
         <p>
           主軸が column または column-reverse の場合は、交差軸は行方向となります。

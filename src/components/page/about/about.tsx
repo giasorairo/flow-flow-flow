@@ -1,6 +1,5 @@
 import { Center, Heading, ListItem, UnorderedList, Box } from '@chakra-ui/react';
 import { LinkItem } from '../../atom/link-item/link-item';
-import { NextChakraLink } from '../../ui/next-chakra-link/next-chakra-link';
 
 const About = () => {
   return (
