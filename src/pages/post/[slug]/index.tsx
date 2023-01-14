@@ -21,7 +21,7 @@ export default function PostPage(props: PostPageProps) {
   return (
     <PostDetail frontmatter={frontmatter} slug={slug} content={content} />
   );
-};
+}
 
 export async function getStaticPaths() {
   const files = fs.readdirSync(path.join('posts'));
@@ -34,7 +34,7 @@ export async function getStaticPaths() {
     paths,
     fallback: false,
   };
-};
+}
 
 export async function getStaticProps({ params: { slug } }) {
   const markdownWithMeta = fs.readFileSync(path.join('posts', slug + '.md'), 'utf-8');

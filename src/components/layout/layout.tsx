@@ -7,8 +7,9 @@ import {
   Divider,
 } from '@chakra-ui/react';
 import { LinkItem } from '../atom/link-item/link-item';
+import { ReactNode } from 'react';
 
-export default function Layout(props: { children: JSX.Element }) {
+export default function Layout(props: { children: ReactNode }) {
   const { children } = props;
 
   return (

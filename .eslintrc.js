@@ -3,7 +3,7 @@ module.exports = {
     browser: true,
   },
   extends: [
-    // "eslint:recommended",
+    "eslint:recommended",
     "next",
     "next/core-web-vitals",
     "plugin:react/recommended",
@@ -11,10 +11,5 @@ module.exports = {
   ],
   rules: {
     "react/prop-types": "off",
-  },
-  parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
-    }
   },
 };

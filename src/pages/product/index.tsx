@@ -1,4 +1,4 @@
-import { Box, Center, Heading, Image, Text, Link, Flex, useColorModeValue, UnorderedList, ListItem } from '@chakra-ui/react';
+import { Box, Center, Heading, Image, Text, Link, Flex, UnorderedList, ListItem } from '@chakra-ui/react';
 import Layout from '../../components/layout/layout';
 
 const PRODUCTS = [
