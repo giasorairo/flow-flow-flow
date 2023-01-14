@@ -2,13 +2,10 @@ import Head from 'next/head';
 import {
   Box,
   useColorModeValue,
-  Center,
   UnorderedList,
   ListItem,
   Divider,
-  Flex,
 } from '@chakra-ui/react';
-import Link, { LinkProps } from 'next/link';
 import { LinkItem } from '../atom/link-item/link-item';
 
 export default function Layout(props: { children: JSX.Element }) {
@@ -47,7 +44,7 @@ export default function Layout(props: { children: JSX.Element }) {
       </Box>
     </>
   );
-};
+}
 
 
 type NavigationItem = { label: string, path: string };

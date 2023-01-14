@@ -63,7 +63,7 @@ const PostDetail = (props: PropsType) => {
           </Box>
           <Heading as={'h1'} fontSize={'1.5rem'}>{frontmatter.title}</Heading>
           <Box p={1} />
-          <Text color={'gray.200'}>{frontmatter.date}</Text>
+          <Text color={'gray.400'}>{frontmatter.date}</Text>
           <Box p={4} />
           {frontmatter.cover_image
             ? (
@@ -83,6 +83,8 @@ const PostDetail = (props: PropsType) => {
             as={'article'}
             className={'markdown-body'}
             css={{
+              fontFamily: 'Noto Sans JP, sans-serif',
+              fontSize: '0.9rem',
               // background: '#000',
               // color: '#ddd',
               pre: {

@@ -41,6 +41,8 @@ const DesktopNav = () => {
   const linkHoverColor = useColorModeValue('pink.200', 'white');
   const { asPath } = useRouter();
 
+  const colorModeValue = useColorModeValue('pink.200', 'gray.900');
+
   return (
     <Stack direction={'row'} spacing={4}>
       {NAV_ITEMS.map((navItem) => (
@@ -56,7 +58,7 @@ const DesktopNav = () => {
                   color={linkColor}
                   borderBottom={navItem.href === asPath ? 1 : 0}
                   borderStyle={'solid'}
-                  borderColor={useColorModeValue('pink.200', 'gray.900')}
+                  borderColor={colorModeValue}
                   _hover={{
                     textDecoration: 'none',
                     color: linkHoverColor,

@@ -21,7 +21,7 @@ export const CssPage = () => {
       <div className={styles['page_list_container']}>
         <ul>
           {PAGE_LIST.map((page) => (
-            <li><NextLink href={page.url}>{page.label}</NextLink></li>
+            <li key={page.label}><NextLink href={page.url}>{page.label}</NextLink></li>
           ))}
         </ul>
       </div>

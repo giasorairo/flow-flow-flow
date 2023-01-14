@@ -3,5 +3,6 @@ interface Window {
 }
 
 declare global {
-  const window: Window,
+  // eslint-disable-next-line no-unused-vars
+  var window: Window;
 }

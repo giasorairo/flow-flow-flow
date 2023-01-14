@@ -59,7 +59,7 @@ export default function Product() {
               <Heading as={'h3'} fontSize={'md'}>概要</Heading>
               <Box p={1} />
               {product.description.split('\n').map((text) => (
-                <Text>{text}</Text>
+                <Text key={text}>{text}</Text>
               ))}
               <Box p={2}/>
               <Heading as={'h3'} fontSize={'md'}>link</Heading>
@@ -70,9 +70,9 @@ export default function Product() {
                     <Link
                       href={link.href}
                       fontWeight={'bold'}
-                      color={useColorModeValue('pink.200', 'pink.400')}
+                      color={"pink.200"}
                       _hover={{
-                        color: useColorModeValue('pink.400', 'pink.600'),
+                        color: "pink.400",
                       }}
                     >
                       {link.title}
@@ -87,4 +87,4 @@ export default function Product() {
       </Center>
     </Layout>
   )
-};
+}
