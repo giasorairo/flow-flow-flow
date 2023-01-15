@@ -8,6 +8,7 @@ module.exports = {
     "next/core-web-vitals",
     "plugin:react/recommended",
     "plugin:react/jsx-runtime",
+    "prettier",
   ],
   rules: {
     "react/prop-types": "off",
