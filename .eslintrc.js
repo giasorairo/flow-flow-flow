@@ -4,7 +4,6 @@ module.exports = {
   },
   extends: [
     "eslint:recommended",
-    "next",
     "next/core-web-vitals",
     "plugin:react/recommended",
     "plugin:react/jsx-runtime",
@@ -12,5 +11,6 @@ module.exports = {
   ],
   rules: {
     "react/prop-types": "off",
+    "no-unused-vars": "off",
   },
 };

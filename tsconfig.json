@@ -2,11 +2,7 @@
   "compilerOptions": {
     "target": "es5",
     "downlevelIteration": true,
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext",
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
@@ -26,7 +22,5 @@
     "**/*.tsx",
     "pages/post/[slug]/index.tsx"
   ],
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": ["node_modules"]
 }
