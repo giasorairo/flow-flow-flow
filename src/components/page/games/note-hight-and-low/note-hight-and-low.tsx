@@ -20,6 +20,7 @@ import { SelectDegreeLevel } from "./components/select-degree-level/select-degre
 import { useSelectDegreeLevel } from "./components/select-degree-level/use-select-degree-level";
 import { DegreeLevel } from "./types/degree-level";
 import { BsFillVolumeUpFill } from "react-icons/bs";
+import Head from "next/head";
 
 const getDegreeLevelText = (degreeLevel: number) => {
   const keys = Object.keys(DEGREE_LEVEL);
@@ -163,144 +164,192 @@ export const NoteHightAndLow = () => {
   }, [degreeLevel, resetGame]);
 
   return (
-    <Flex
-      flexDirection={"column"}
-      alignItems="center"
-      style={{
-        fontFamily: "'Covered By Your Grace', cursive",
-      }}
-    >
-      <Flex marginY={4} flexDirection="column" alignItems={"center"} gap={4}>
-        <Heading as={"h1"} fontFamily="font-family: 'Pacifico', cursive">
-          note hight & low
-        </Heading>
-        <Flex alignItems={"center"} gap={2}>
-          <Text color={"red"}>Watch the volume.</Text>
-          <Icon as={BsFillVolumeUpFill} color="red" />
-        </Flex>
-      </Flex>
-      <Flex position={"relative"} width={"full"} justifyContent="center">
-        <Flex
-          className="game_main"
-          flexFlow={"column"}
-          alignItems={"center"}
-          bgColor="black"
-          width={{ base: "full", md: "700px" }}
-          paddingY={8}
-          paddingX={4}
-        >
-          <Flex width={"100%"} className="cards_container" gap={2}>
-            <Flex
-              className="card_container"
-              flexFlow={"column"}
-              alignItems="center"
-              gap={2}
-              flex={1}
-            >
-              <Flex
-                width={"full"}
-                height={"200px"}
-                bgColor="black"
-                border="3px solid white"
-                justifyContent={"center"}
-                alignItems="center"
-                fontSize={"3rem"}
-                color="white"
-                borderRadius={"md"}
-              >
-                {isShowResultMark ? questionNote : "?"}
-                <br />
-              </Flex>
-              <IconButton
-                width={"50px"}
-                aria-label="play"
-                icon={<TriangleUpIcon css={{ rotate: "90deg" }} />}
-                borderRadius={"50%"}
-                size="lg"
-                onClick={handlerClickQuestionNoteButton}
-                disabled={disableControllerButton}
-              />
-            </Flex>
-            <Flex
-              className="card_container"
-              flexFlow={"column"}
-              alignItems="center"
-              gap={2}
-              flex={1}
-            >
-              <Flex
-                width={"full"}
-                height={"200px"}
-                bgColor="black"
-                border="3px solid white"
-                justifyContent={"center"}
-                alignItems="center"
-                fontSize={"3rem"}
-                color="white"
-                borderRadius={"md"}
-              >
-                {currentNote}
-              </Flex>
-              <IconButton
-                width={"50px"}
-                aria-label="play"
-                icon={<TriangleUpIcon css={{ rotate: "90deg" }} />}
-                borderRadius={"50%"}
-                size="lg"
-                onClick={handlerClickCurrenNoteButton}
-                disabled={disableControllerButton}
-              />
-            </Flex>
-          </Flex>
-          <Box p={2} />
-          <Text color="white" fontSize={"4xl"}>
-            score: {score}/10
-          </Text>
-          <Box p={2} />
-          <Flex gap={4}>
-            <Button
-              fontSize={"2xl"}
-              variant={"solid"}
-              colorScheme={"white"}
-              border="white solid 1px"
-              onClick={() => {
-                handlerClickHightLowButton("hight");
-              }}
-              size="lg"
-              disabled={disableControllerButton}
-            >
-              hight
-            </Button>
-            <Button
-              fontSize={"2xl"}
-              variant={"solid"}
-              colorScheme={"white"}
-              border="white solid 1px"
-              onClick={() => {
-                handlerClickHightLowButton("low");
-              }}
-              size="lg"
-              disabled={disableControllerButton}
-            >
-              Low
-            </Button>
+    <>
+      <Head>
+        <meta
+          name="description"
+          key="description"
+          content={"note hight and low"}
+        />
+        <meta
+          property="og:site_name"
+          key="ogSiteName"
+          content="note hight and low"
+        />
+        <meta
+          property="og:title"
+          key="ogTItle"
+          content={"note hight and low"}
+        />
+        <meta
+          property="og:url"
+          content={`${process.env.NEXT_PUBLIC_URL}/games/note-hight-and-low`}
+        />
+        <meta
+          property="og:description"
+          key="ogDescription"
+          content={"note hight and low"}
+        />
+        <meta property="og:type" content="article" />
+        <meta
+          property="og:image"
+          key="ogImage"
+          content={`${process.env.NEXT_PUBLIC_URL}/images/ogp/games/note-hight-and-low.png`}
+        />
+        <meta
+          name="twitter:card"
+          key="twitterCard"
+          content="summary_large_image"
+        />
+        <meta
+          name="twitter:image"
+          key="twitterImage"
+          content={`${process.env.NEXT_PUBLIC_URL}/images/ogp/games/note-hight-and-low.png`}
+        />
+      </Head>
+      <Flex
+        flexDirection={"column"}
+        alignItems="center"
+        style={{
+          fontFamily: "'Covered By Your Grace', cursive",
+        }}
+      >
+        <Flex marginY={4} flexDirection="column" alignItems={"center"} gap={4}>
+          <Heading as={"h1"} fontFamily="font-family: 'Pacifico', cursive">
+            note hight & low
+          </Heading>
+          <Flex alignItems={"center"} gap={2}>
+            <Text color={"red"}>Watch the volume.</Text>
+            <Icon as={BsFillVolumeUpFill} color="red" />
           </Flex>
         </Flex>
-        {isShowResultMark ? <ResultMark isCorrect={isResultCorrect} /> : <></>}
-        {isEndGame ? (
-          <ResultModal
-            score={score}
-            degreeLevelText={getDegreeLevelText(degreeLevel)}
-            onClickCloseButton={handlerClickResultModalCloseButton}
-          />
-        ) : (
-          <></>
-        )}
+        <Flex position={"relative"} width={"full"} justifyContent="center">
+          <Flex
+            className="game_main"
+            flexFlow={"column"}
+            alignItems={"center"}
+            bgColor="black"
+            width={{ base: "full", md: "700px" }}
+            paddingY={8}
+            paddingX={4}
+          >
+            <Flex width={"100%"} className="cards_container" gap={2}>
+              <Flex
+                className="card_container"
+                flexFlow={"column"}
+                alignItems="center"
+                gap={2}
+                flex={1}
+              >
+                <Flex
+                  width={"full"}
+                  height={"200px"}
+                  bgColor="black"
+                  border="3px solid white"
+                  justifyContent={"center"}
+                  alignItems="center"
+                  fontSize={"3rem"}
+                  color="white"
+                  borderRadius={"md"}
+                >
+                  {isShowResultMark ? questionNote : "?"}
+                  <br />
+                </Flex>
+                <IconButton
+                  width={"50px"}
+                  aria-label="play"
+                  icon={<TriangleUpIcon css={{ rotate: "90deg" }} />}
+                  borderRadius={"50%"}
+                  size="lg"
+                  onClick={handlerClickQuestionNoteButton}
+                  disabled={disableControllerButton}
+                />
+              </Flex>
+              <Flex
+                className="card_container"
+                flexFlow={"column"}
+                alignItems="center"
+                gap={2}
+                flex={1}
+              >
+                <Flex
+                  width={"full"}
+                  height={"200px"}
+                  bgColor="black"
+                  border="3px solid white"
+                  justifyContent={"center"}
+                  alignItems="center"
+                  fontSize={"3rem"}
+                  color="white"
+                  borderRadius={"md"}
+                >
+                  {currentNote}
+                </Flex>
+                <IconButton
+                  width={"50px"}
+                  aria-label="play"
+                  icon={<TriangleUpIcon css={{ rotate: "90deg" }} />}
+                  borderRadius={"50%"}
+                  size="lg"
+                  onClick={handlerClickCurrenNoteButton}
+                  disabled={disableControllerButton}
+                />
+              </Flex>
+            </Flex>
+            <Box p={2} />
+            <Text color="white" fontSize={"4xl"}>
+              score: {score}/10
+            </Text>
+            <Box p={2} />
+            <Flex gap={4}>
+              <Button
+                fontSize={"2xl"}
+                variant={"solid"}
+                colorScheme={"white"}
+                border="white solid 1px"
+                onClick={() => {
+                  handlerClickHightLowButton("hight");
+                }}
+                size="lg"
+                disabled={disableControllerButton}
+              >
+                hight
+              </Button>
+              <Button
+                fontSize={"2xl"}
+                variant={"solid"}
+                colorScheme={"white"}
+                border="white solid 1px"
+                onClick={() => {
+                  handlerClickHightLowButton("low");
+                }}
+                size="lg"
+                disabled={disableControllerButton}
+              >
+                Low
+              </Button>
+            </Flex>
+          </Flex>
+          {isShowResultMark ? (
+            <ResultMark isCorrect={isResultCorrect} />
+          ) : (
+            <></>
+          )}
+          {isEndGame ? (
+            <ResultModal
+              score={score}
+              degreeLevelText={getDegreeLevelText(degreeLevel)}
+              onClickCloseButton={handlerClickResultModalCloseButton}
+            />
+          ) : (
+            <></>
+          )}
+        </Flex>
+        <Box p={4} />
+        <SelectDegreeLevel
+          onChangeDegreeLevelSelect={handlerChangeDegreeLevelSelect}
+        />
       </Flex>
-      <Box p={4} />
-      <SelectDegreeLevel
-        onChangeDegreeLevelSelect={handlerChangeDegreeLevelSelect}
-      />
-    </Flex>
+    </>
   );
 };
