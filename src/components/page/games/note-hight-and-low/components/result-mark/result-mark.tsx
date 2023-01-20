@@ -29,7 +29,7 @@ export const ResultMark = (props: Props) => {
       transform={"translate(-50%, -40%)"}
       animation={myAnimation}
     >
-      {isCorrect ? "👍👍👍" : "😢😢😢"}
+      {isCorrect ? "👍👍" : "😢😢"}
     </Flex>
   );
 };

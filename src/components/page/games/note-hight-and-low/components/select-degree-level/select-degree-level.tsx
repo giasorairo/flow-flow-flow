@@ -10,10 +10,11 @@ export const SelectDegreeLevel = (props: Props) => {
   const { onChangeDegreeLevelSelect } = props;
   return (
     <Flex alignItems={"center"} gap={2}>
-      <Text>mode: </Text>
+      <Text fontSize={"3xl"}>mode: </Text>
       <Select
         defaultValue={DEGREE_LEVEL["MIDDLE"]}
         onChange={onChangeDegreeLevelSelect}
+        borderColor="black"
       >
         <option value={DEGREE_LEVEL["SUPER_SUPER_LOW"]}>super super low</option>
         <option value={DEGREE_LEVEL["SUPER_LOW"]}>super low</option>

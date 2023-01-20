@@ -21,6 +21,7 @@ import { useSelectDegreeLevel } from "./components/select-degree-level/use-selec
 import { DegreeLevel } from "./types/degree-level";
 import { BsFillVolumeUpFill } from "react-icons/bs";
 import Head from "next/head";
+import { Adsense } from "../../../functional/adsense/adsense";
 
 const getDegreeLevelText = (degreeLevel: number) => {
   const keys = Object.keys(DEGREE_LEVEL);
@@ -213,6 +214,7 @@ export const NoteHightAndLow = () => {
         style={{
           fontFamily: "'Covered By Your Grace', cursive",
         }}
+        minHeight="100vh"
       >
         <Flex marginY={4} flexDirection="column" alignItems={"center"} gap={4}>
           <Heading as={"h1"} fontFamily="font-family: 'Pacifico', cursive">
@@ -349,6 +351,17 @@ export const NoteHightAndLow = () => {
         <SelectDegreeLevel
           onChangeDegreeLevelSelect={handlerChangeDegreeLevelSelect}
         />
+        <Box
+          textAlign={"center"}
+          py={4}
+          maxWidth={"620px"}
+          minWidth={"300px"}
+          height="150px"
+        >
+          <Text>sponsored link</Text>
+          <Box p={1} />
+          <Adsense />
+        </Box>
       </Flex>
     </>
   );
