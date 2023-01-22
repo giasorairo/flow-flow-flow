@@ -45,15 +45,15 @@ const playSound = (note: Tone.Unit.Frequency, degreeLevel: DegreeLevel) => {
 const isCorrectAnswer = (
   currentNote: Tone.Unit.Frequency,
   questionNote: Tone.Unit.Frequency,
-  hightOrLow: "hight" | "low"
+  highOrLow: "high" | "low"
 ) => {
   const currentNoteIndex = NOTES.findIndex((note) => note === currentNote);
   const questionNoteIndex = NOTES.findIndex((note) => note === questionNote);
   if (currentNoteIndex < 0 || questionNoteIndex < 0) {
     throw new Error("note is invalid");
   }
-  switch (hightOrLow) {
-    case "hight": {
+  switch (highOrLow) {
+    case "high": {
       if (currentNoteIndex <= questionNoteIndex) {
         return true;
       }
@@ -66,7 +66,7 @@ const isCorrectAnswer = (
       return false;
     }
     default: {
-      throw new Error("hightOrLow is invalid");
+      throw new Error("highOrLow is invalid");
     }
   }
 };
@@ -80,7 +80,7 @@ const useDidmount = (fn: () => void) => {
 
 const MAX_GAME_COUNT = 10;
 
-export const NoteHightAndLow = () => {
+export const NoteHighAndLow = () => {
   const [currentNote, setCurrentNote] = useState<Tone.Unit.Frequency>("");
   const [questionNote, setQuestionNote] = useState<Tone.Unit.Frequency>("");
   const [gameCount, setGameCount] = useState<number>(1);
@@ -115,15 +115,11 @@ export const NoteHightAndLow = () => {
     playSound(questionNote, degreeLevel);
   }, [questionNote, degreeLevel]);
 
-  const handlerClickHightLowButton = useCallback(
-    async (hightOrLow: "hight" | "low") => {
+  const handlerClickHighLowButton = useCallback(
+    async (highOrLow: "high" | "low") => {
       try {
         // 正誤判定
-        const isCorrect = isCorrectAnswer(
-          currentNote,
-          questionNote,
-          hightOrLow
-        );
+        const isCorrect = isCorrectAnswer(currentNote, questionNote, highOrLow);
         await showResultMark(isCorrect);
         calcScore(isCorrect);
         nextGame();
@@ -170,32 +166,28 @@ export const NoteHightAndLow = () => {
         <meta
           name="description"
           key="description"
-          content={"note hight and low"}
+          content={"note high and low"}
         />
         <meta
           property="og:site_name"
           key="ogSiteName"
-          content="note hight and low"
+          content="note high and low"
         />
-        <meta
-          property="og:title"
-          key="ogTItle"
-          content={"note hight and low"}
-        />
+        <meta property="og:title" key="ogTItle" content={"note high and low"} />
         <meta
           property="og:url"
-          content={`${process.env.NEXT_PUBLIC_URL}/games/note-hight-and-low`}
+          content={`${process.env.NEXT_PUBLIC_URL}/games/note-high-and-low`}
         />
         <meta
           property="og:description"
           key="ogDescription"
-          content={"note hight and low"}
+          content={"note high and low"}
         />
         <meta property="og:type" content="article" />
         <meta
           property="og:image"
           key="ogImage"
-          content={`${process.env.NEXT_PUBLIC_URL}/images/ogp/games/note-hight-and-low.png`}
+          content={`${process.env.NEXT_PUBLIC_URL}/images/ogp/games/note-high-and-low.png`}
         />
         <meta
           name="twitter:card"
@@ -205,7 +197,7 @@ export const NoteHightAndLow = () => {
         <meta
           name="twitter:image"
           key="twitterImage"
-          content={`${process.env.NEXT_PUBLIC_URL}/images/ogp/games/note-hight-and-low.png`}
+          content={`${process.env.NEXT_PUBLIC_URL}/images/ogp/games/note-high-and-low.png`}
         />
       </Head>
       <Flex
@@ -218,7 +210,7 @@ export const NoteHightAndLow = () => {
       >
         <Flex marginY={4} flexDirection="column" alignItems={"center"} gap={4}>
           <Heading as={"h1"} fontFamily="font-family: 'Pacifico', cursive">
-            note hight & low
+            note high & low
           </Heading>
           <Flex alignItems={"center"} gap={2}>
             <Text color={"red"}>Watch the volume.</Text>
@@ -310,12 +302,12 @@ export const NoteHightAndLow = () => {
                 colorScheme={"white"}
                 border="white solid 1px"
                 onClick={() => {
-                  handlerClickHightLowButton("hight");
+                  handlerClickHighLowButton("high");
                 }}
                 size="lg"
                 disabled={disableControllerButton}
               >
-                hight
+                high
               </Button>
               <Button
                 fontSize={"2xl"}
@@ -323,7 +315,7 @@ export const NoteHightAndLow = () => {
                 colorScheme={"white"}
                 border="white solid 1px"
                 onClick={() => {
-                  handlerClickHightLowButton("low");
+                  handlerClickHighLowButton("low");
                 }}
                 size="lg"
                 disabled={disableControllerButton}

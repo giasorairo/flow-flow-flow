@@ -1,0 +1,12 @@
+export const DEGREE_LEVEL = {
+  SUPER_SUPER_LOW: 0,
+  SUPER_LOW: 1,
+  LOW: 2,
+  MIDDLE: 3,
+  HIGH: 4,
+  SUPER_HIGH: 5,
+  SUPER_SUPER_HIGH: 6,
+  HYPER_HIGH: 7,
+  HYPER_HYPER_HIGH: 8,
+  ULTIMATE_HIGH: 9,
+} as const;

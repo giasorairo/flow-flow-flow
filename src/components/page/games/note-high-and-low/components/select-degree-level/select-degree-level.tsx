@@ -20,16 +20,16 @@ export const SelectDegreeLevel = (props: Props) => {
         <option value={DEGREE_LEVEL["SUPER_LOW"]}>super low</option>
         <option value={DEGREE_LEVEL["LOW"]}>low</option>
         <option value={DEGREE_LEVEL["MIDDLE"]}>middle</option>
-        <option value={DEGREE_LEVEL["HEIGHT"]}>height</option>
-        <option value={DEGREE_LEVEL["SUPER_HEIGHT"]}>super height</option>
-        <option value={DEGREE_LEVEL["SUPER_SUPER_HEIGHT"]}>
-          super super height
+        <option value={DEGREE_LEVEL["HIGH"]}>high</option>
+        <option value={DEGREE_LEVEL["SUPER_HIGH"]}>super high</option>
+        <option value={DEGREE_LEVEL["SUPER_SUPER_HIGH"]}>
+          super super high
         </option>
-        <option value={DEGREE_LEVEL["HYPER_HEIGHT"]}>hyper height</option>
-        <option value={DEGREE_LEVEL["HYPER_HYPER_HEIGHT"]}>
-          hyper hyper height
+        <option value={DEGREE_LEVEL["HYPER_HIGH"]}>hyper high</option>
+        <option value={DEGREE_LEVEL["HYPER_HYPER_HIGH"]}>
+          hyper hyper high
         </option>
-        <option value={DEGREE_LEVEL["ULTIMATE_HEIGHT"]}>ultimate height</option>
+        <option value={DEGREE_LEVEL["ULTIMATE_HIGH"]}>ultimate high</option>
       </Select>
     </Flex>
   );
