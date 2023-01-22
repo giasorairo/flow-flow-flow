@@ -1,5 +1,5 @@
-import { Button, Flex, IconButton, Text } from "@chakra-ui/react";
-import { TwitterShareButton, TwitterIcon } from "next-share";
+import { Button, Flex, IconButton, Text, Box } from "@chakra-ui/react";
+import { TwitterIcon } from "next-share";
 
 type Props = {
   score: number;
@@ -32,11 +32,12 @@ export const ResultModal = (props: Props) => {
           icon={<TwitterIcon round={true} size={50} />}
           onClick={() => {
             window.open(
-              `https://twitter.com/intent/tweet?url=${process.env.NEXT_PUBLIC_URL}/games/note-hight-and-low&text=note hight and low ♪%0D%0Amode: ${degreeLevelText}%0D%0Ascore: ${score} 🎉%0D%0A%23note_height_and_low%0D%0A`
+              `https://twitter.com/intent/tweet?url=${process.env.NEXT_PUBLIC_URL}/games/note-high-and-low&text=note high and low ♪%0D%0Amode: ${degreeLevelText}%0D%0Ascore: ${score} 🎉%0D%0A%23note_high_and_low%0D%0A`
             );
           }}
         />
       </Flex>
+      <Box p={1} />
       <Button
         variant={"solid"}
         bgColor="black"
